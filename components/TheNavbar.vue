@@ -18,7 +18,9 @@
      <div class="low-bar">
          <nav>
               <ul class="cat-list">
-                  <li v-for="cat in categories" :key="cat">{{cat}}</li>   
+                  <li v-for="cat in categories" :key="cat.name">
+                     <nuxt-link :to="cat.link" exact>{{cat.name}}</nuxt-link>
+                      </li>   
               </ul>
           </nav>
      </div>
@@ -29,7 +31,13 @@
 export default {
     data(){
         return{
-            categories:["cat1","cat2","cat3","cat4"]
+            categories:[
+                {link:"/",name:"Home"},
+            {link:"tshirts",name:"tees"},
+            {link:"cups",name:"cups"},
+            {link:"baseball",name:"baseball tees"},
+
+            ]
         }
     }
 

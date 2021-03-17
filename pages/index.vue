@@ -1,27 +1,63 @@
 <template>
   <main>
-    
+      <h1 class="title">Home</h1>
+      <Grid :iproducts="products"/>
   </main>
 </template>
 
 <script>
+import Grid from '../components/Grid.vue'
 
 
 export default {
   components: {
-   
+    Grid
+  },
+  data(){
+    return{
+      products:[
+        {title:"tee1",
+          desc:"this is t1"
+        },
+        {title:"tee2",
+          desc:"this is t2"
+        },
+         {title:"tee1",
+          desc:"this is t1"
+        },
+         {title:"tee1",
+          desc:"this is t1"
+        },
+         {title:"tee1",
+          desc:"this is t1"
+        },
+         {title:"tee1",
+          desc:"this is t1"
+        },
+         {title:"tee1",
+          desc:"this is t1"
+        },
+      ]
+    }
   }
 }
 </script>
 
 <style>
+main{
+  max-width: 100%;
+  flex-grow: 1;
+}
 
 .container {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   text-align: center;
+  max-width: 1360px;
+  margin: 20px auto;
+
 }
 
 .title {

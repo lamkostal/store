@@ -2,16 +2,19 @@
   <div>
     <Navbar /> 
     <Hero />
-    <nuxt/>
+   <div class="container"> <nuxt/></div>
+     <Footer />
   </div>
 </template>
 <script>
-import Hero from '../components/Hero.vue'
-import Navbar from '../components/Navbar.vue'
+import Hero from '../components/TheHero.vue'
+import Navbar from '../components/TheNavbar.vue'
+import Footer from '../components/TheFooter.vue'
 export default {
   components:{
     Navbar,
-    Hero
+    Hero,
+    Footer
   }
 }
 </script>

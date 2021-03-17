@@ -1,8 +1,23 @@
 [
   {
+    "name": "Cups",
+    "path": "/Cups",
+    "component": "E:\\\\Sites\\\\NuxtProj\\\\lamstore-proj\\\\lamstore\\\\pages\\\\Cups.vue",
+    "chunkName": "pages/Cups",
+    "_name": "_6f9e7be8"
+  },
+  {
+    "name": "Tshirts",
+    "path": "/Tshirts",
+    "component": "E:\\\\Sites\\\\NuxtProj\\\\lamstore-proj\\\\lamstore\\\\pages\\\\Tshirts.vue",
+    "chunkName": "pages/Tshirts",
+    "_name": "_e1a4f5e4"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "E:\\\\Sites\\\\NuxtProj\\\\lamstore-proj\\\\lamstore\\\\pages\\\\index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_2074b80f"
   }
 ]
