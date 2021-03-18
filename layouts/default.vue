@@ -39,6 +39,17 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
+body{
+  --main-bgcolor:#f2f2f2;
+  --main-text-color:rgb(44, 44, 44);
+  --sec-text-color:rgb(100, 99, 99);
+  background: var(--main-bgcolor);
+  color:var(--main-text-color);
+  overflow: visible;
+}
+body *{
+overflow: visible;
+}
 
 
 </style>

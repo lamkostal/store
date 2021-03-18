@@ -1,8 +1,17 @@
 <template>
   <article>
       <div class="card-container">
-          <h3 class="prod-name">{{title}}</h3>
-          <p class="prod-descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, eius.</p>
+          <div class="card__image">
+              <a href="#"><img :src="imgsrc" :alt="imgdesc"></a>
+          </div>
+          <div class="card__title"><h3>{{title}}</h3></div>
+          <div class="card__details">
+              <p class="prod-descr">{{desc}}</p>
+              <span class="prod-price">{{addcurrency}}</span>
+              <button class="icon cart-icon">
+                  <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20"> <path d="M2 2h4v4h16v11H4V4H2V2zm4 13h14V8H6v7zm0 4h3v3H6v-3zm14 0h-3v3h3v-3z" fill="black"/> </svg>
+              </button>
+              </div>
       </div>
   </article>
 </template>
@@ -10,17 +19,58 @@
 <script>
 
 export default {
-    props:['title','desc','price','imgsrc'],
-
+    props:['title','desc','price','imgsrc','imgdesc'],
+    computed:{
+      addcurrency(){
+        return  this.price+= " $"
+        }
+    }
 }
 </script>
 
 <style>
 .card-container{
-    width:250px;
-    border: 1px solid black;
-    border-radius: 15px;
-    box-shadow: 0 2px 2px 1px black;
+    padding: 05px  ;
+    width:270px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 02px 05px 10px 01px rgb(153, 153, 153);
     margin: auto;
+    overflow: hidden;
+    background: rgb(255, 255, 255);
 }
+.card__title{
+    margin:10px 0 0 0;
+    font-size: 1.1em;
+    color:var(--sec-text-color);
+
+}
+.card__image{
+    height: 250px;
+    background: rgb(255, 255, 255);
+    overflow: hidden;
+    
+   
+}
+.card__image a{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.card__image img{
+    max-width: 100%;
+}
+.card__details{
+    margin: 5px 0;
+}
+.cart-icon{
+    display: inline-block;
+    margin:0px 0  0 150px;
+    border: none;
+    padding: 5px 10px;
+}
+.cart-icon:hover{
+    background: rgb(144, 231, 144);
+}
+
 </style>
