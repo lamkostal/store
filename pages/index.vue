@@ -4,6 +4,7 @@
         <h2 class="subtitle">featured products</h2>
       </div>
       <Grid :products="products"/>
+
   </main>
 </template>
 
@@ -76,7 +77,7 @@ main{
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
   font-weight: 400;
-  font-size: 3em;
+  font-size: 2.7em;
   letter-spacing: 1px;
 }
 .subtitle {

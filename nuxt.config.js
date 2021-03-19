@@ -13,10 +13,16 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
+    script:[
+      {src:'https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js',async:true, body:true }
+    ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+    { rel: 'stylesheet', href:'https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css' }
+
     ]
   },
+  
 
   /*
   ** Customize the progress-bar color

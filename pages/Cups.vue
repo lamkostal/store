@@ -1,8 +1,8 @@
 <template>
   <main>
-   <div class="headers"> <h2 class="subtitle">Cups</h2></div>
+   <div class="headers"> 
+     <h2 class="subtitle">Cups</h2></div>
       <Grid :products="products"/>
-
   </main>
 </template>
 

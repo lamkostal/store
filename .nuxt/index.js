@@ -58,7 +58,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"lamstore","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"lamstore e-commerce with snipcart"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
+    head: {"title":"lamstore","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"lamstore e-commerce with snipcart"}],"script":[{"src":"https:\u002F\u002Fcdn.snipcart.com\u002Fthemes\u002Fv3.0.31\u002Fdefault\u002Fsnipcart.js","async":true,"body":true}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","href":"https:\u002F\u002Fcdn.snipcart.com\u002Fthemes\u002Fv3.0.31\u002Fdefault\u002Fsnipcart.css"}],"style":[]},
 
     router,
     nuxt: {

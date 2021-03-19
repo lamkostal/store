@@ -1,6 +1,6 @@
 <template>
   <div class="hero-container">
-    <h1 class="title">lamstore - t-shirts and apparel</h1>
+    <h1 class="title">lamstore <br> shop t-shirts and other apparel</h1>
   </div>
 </template>
 
@@ -22,6 +22,7 @@ export default {
     justify-content: center;
     align-items: center;
     color: blanchedalmond;
+    text-align: center;
 }
 
 </style>

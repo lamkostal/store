@@ -6,6 +6,7 @@
                 :desc="product.desc"
                 :price="product.price"
                 :imgsrc="product.imgsrc"
+                :imgalt="product.imgalt"
                 />
       </div>
   </div>

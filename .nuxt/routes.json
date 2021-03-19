@@ -1,5 +1,12 @@
 [
   {
+    "name": "Baseball",
+    "path": "/Baseball",
+    "component": "E:\\\\Sites\\\\NuxtProj\\\\lamstore-proj\\\\lamstore\\\\pages\\\\Baseball.vue",
+    "chunkName": "pages/Baseball",
+    "_name": "_0e34e743"
+  },
+  {
     "name": "Cups",
     "path": "/Cups",
     "component": "E:\\\\Sites\\\\NuxtProj\\\\lamstore-proj\\\\lamstore\\\\pages\\\\Cups.vue",

@@ -2,8 +2,11 @@
   <div>
     <Navbar /> 
     <Hero />
-   <div class="container"> <nuxt/></div>
+   <div class="container">
+      <nuxt/></div>
+<div id="snipcart" data-config-modal-style="side" data-api-key="NmZmYmY2NDgtMGFmOC00NmYwLWE2YzQtZGNiYTY0NjRlYTUxNjM3NDE4MTkyODk2MzAyOTA4" hidden></div>
      <Footer />
+
   </div>
 </template>
 <script>
@@ -38,18 +41,30 @@ html {
 *:after {
   box-sizing: border-box;
   margin: 0;
+  /* overflow-y:visible;  */
+  position: relative;
 }
 body{
+  --main-color:red;
+  --sec-color:black;
+  --main-accent-color:rgb(0, 85, 74);
   --main-bgcolor:#f2f2f2;
   --main-text-color:rgb(44, 44, 44);
   --sec-text-color:rgb(100, 99, 99);
   background: var(--main-bgcolor);
   color:var(--main-text-color);
   overflow: visible;
+  
 }
-body *{
-overflow: visible;
+button{
+  
+    background: transparent;
+
 }
+button:focus,button:visited{
+ outline-color:var(--main-accent-color) ;
+}
+
 
 
 </style>
