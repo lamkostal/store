@@ -1,6 +1,7 @@
 <template>
   <div>
-    <Navbar /> 
+    <Head />
+    <Nav /> 
     <Hero />
    <div class="container">
       <nuxt/></div>
@@ -10,12 +11,14 @@
   </div>
 </template>
 <script>
+import Head from '../components/TheHead.vue'
 import Hero from '../components/TheHero.vue'
-import Navbar from '../components/TheNavbar.vue'
+import Nav from '../components/TheNav.vue'
 import Footer from '../components/TheFooter.vue'
 export default {
   components:{
-    Navbar,
+    Head,
+    Nav,
     Hero,
     Footer
   }
