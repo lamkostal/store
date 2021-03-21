@@ -11,7 +11,7 @@
               <button class="icon cart-icon buy-button snipcart-add-item" title="add to cart"
                 :data-item-id="title"
                 :data-item-price="price"
-                data-item-url="http://localhost:3000/"
+                :data-item-url="url"
                 :data-item-name="title"
                 :data-item-image="imgsrc"
                 :data-item-description="desc"
@@ -27,9 +27,14 @@
 
 export default {
     props:['title','desc','price','imgsrc','imgalt'],
+    data(){
+        return{
+            url:"http://localhost:3000"+this.$route.path
+        }
+    },
     computed:{
       addcurrency(){
-        return  this.price +" $"
+        return  "$ "+ this.price
         }
     }
 }
@@ -41,7 +46,7 @@ export default {
     width:270px;
     border: none;
     border-radius: 5px;
-    box-shadow: 02px 02px 15px 0px rgba(153, 153, 153,0.7);
+    box-shadow: 07px 04px 15px 0px rgba(189, 189, 189, 0.7);
     margin: auto;
     overflow: hidden;
     background: rgb(255, 255, 255);
@@ -49,7 +54,7 @@ export default {
 .card__title{
     margin:10px 0 0 0;
     font-size: 1.1em;
-    color:var(--main-accent-color);
+    color:var(--main-text-color);
 
 }
 .card__image{
@@ -69,6 +74,7 @@ export default {
 }
 .card__details{
     margin: 5px 0;
+    padding: 0 0 10px;
 }
 .cart-icon{
     display: inline-block;
@@ -77,7 +83,7 @@ export default {
     padding: 5px 10px;
 }
 .cart-icon:hover{
-    background: rgb(144, 231, 144);
-}
+    background:var(--sec-accent-color)
+    }
 
 </style>

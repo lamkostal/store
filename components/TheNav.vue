@@ -101,6 +101,7 @@ export default {
 .cat-list a {
   color: var(--main-text-color);
   text-decoration: none;
+  font-size: 1.1em;
 }
 .cat-list a:hover,
 .cat-list a:focus {
@@ -128,5 +129,8 @@ export default {
 }
 .cart path {
   fill: var(--main-accent-color);
+}
+.cart span{
+  margin: 0 5px;
 }
 </style>
