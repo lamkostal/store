@@ -7,6 +7,8 @@
                 :price="product.price"
                 :imgsrc="product.imgsrc"
                 :imgalt="product.imgalt"
+                :catlist="product.catlist"
+
                 />
       </div>
   </div>

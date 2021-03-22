@@ -1,6 +1,7 @@
 <template>
   <article>
-      <div class="card-container">
+      <div class="card-container" v-if="isCat">
+          {{slug}}
           <div class="card__image">
               <a href="#"><img :src="imgsrc" :alt="imgalt"></a>
           </div>
@@ -26,15 +27,19 @@
 <script>
 
 export default {
-    props:['title','desc','price','imgsrc','imgalt'],
+    props:['title','desc','price','imgsrc','imgalt','catlist'],
     data(){
         return{
+            slug:this.$route.name,
             url:"http://localhost:3000"+this.$route.path
         }
     },
     computed:{
       addcurrency(){
         return  "$ "+ this.price
+        },
+        isCat(){
+            return this.catlist.includes(this.slug)
         }
     }
 }

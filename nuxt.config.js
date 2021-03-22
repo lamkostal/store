@@ -17,6 +17,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     script:[
+      {src:"//app.storyblok.com/f/storyblok-latest.js?t=vMmPeTfcoklC2N5BaP4Bbwtt",defer:true},
       {src:'https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js',async:true, body:true }
     ],
     link: [
@@ -48,6 +49,9 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    ['storyblok-nuxt',{ accessToken: process.env.NODE_ENV == 'production' ? 
+'YWHEVryFmuLD6ROEZs0rzgtt':'vMmPeTfcoklC2N5BaP4Bbwtt' , cacheProvider : 
+'memory'}],
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios'
   ],

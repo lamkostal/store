@@ -27,9 +27,8 @@ export default {
           price:15,
           imgsrc:'https://vangogh.teespring.com/v3/image/M63KtOuMIAHawejyqPPauiee6AI/560/560.jpg',
           imgalt:"this is an img alt"
-          
+      
         },
-        
          {title:"tee3",
           desc:"this is t3",
           price:15,
@@ -50,7 +49,30 @@ export default {
         },
       ]
     }
-  }
+  },
+  asyncData(context) {
+    return context.app.$storyapi
+      .get("cdn/stories", {
+        version: process.env.NODE_ENV == "production" ? "published" : "draft",
+        starts_with: "products/",
+      })
+      .then((res) => {
+        console.log(res);
+        return {
+          products: res.data.stories.map((pr) => {
+            return {
+              title: pr.content.name,
+              desc: pr.content.description,
+              price: pr.content.price,
+              imgsrc:pr.content.images[0].filename,
+              incat:pr.content.incategory,
+              catlist:pr.tag_list
+            };
+          }),
+        };
+      })
+      .catch((e) => console.log(e));
+  },
 
 }
 </script>
