@@ -50,7 +50,7 @@ export default {
     return {
       categories: [
         { link: "tshirts", name: "TEES" },
-        { link: "cups", name: "MUGS" },
+        { link: "cups", name: "CUPS" },
         { link: "baseball", name: "BASEBALL-TEES" },
       ],
     };

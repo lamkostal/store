@@ -17,7 +17,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     script:[
-      {src:"//app.storyblok.com/f/storyblok-latest.js?t=vMmPeTfcoklC2N5BaP4Bbwtt",defer:true},
+      {src:"//app.storyblok.com/f/storyblok-latest.js?t=vMmPeTfcoklC2N5BaP4Bbwtt"},
       {src:'https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js',async:true, body:true }
     ],
     link: [

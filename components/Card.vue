@@ -1,7 +1,7 @@
 <template>
-  <article>
-      <div class="card-container" v-if="isCat">
-          {{slug}}
+  <article v-if="hasCurrentCat">
+      <div class="card-container" >
+         <div v-if="isFeatured" class="ribon featured">featured</div>
           <div class="card__image">
               <a href="#"><img :src="imgsrc" :alt="imgalt"></a>
           </div>
@@ -27,20 +27,24 @@
 <script>
 
 export default {
-    props:['title','desc','price','imgsrc','imgalt','catlist'],
+    props:['title','desc','price','imgsrc','imgalt','catlist','index','full_slug'],
     data(){
         return{
             slug:this.$route.name,
-            url:"http://localhost:3000"+this.$route.path
+            url:"http://localhost:3000"+this.$route.path,
         }
     },
     computed:{
       addcurrency(){
         return  "$ "+ this.price
         },
-        isCat(){
-            return this.catlist.includes(this.slug)
-        }
+      hasCurrentCat(){
+         return this.catlist.includes(this.slug)||this.full_slug.includes(this.slug)      
+    },
+    isFeatured(){
+        return this.catlist.includes('index')
+    }
+     
     }
 }
 </script>
@@ -90,5 +94,17 @@ export default {
 .cart-icon:hover{
     background:var(--sec-accent-color)
     }
+.featured{
+    position:absolute;
+    top:0px;
+    height: auto;
+    padding: 5px;
+    background:var(--main-accent-color);
+    color:#fff;
+    z-index: 200;
+    font-size: 0.8em;
+    border-radius: 0 0  5px;
+
+} 
 
 </style>

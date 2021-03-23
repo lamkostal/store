@@ -3,8 +3,8 @@
     <div class="headers">
       <h2 class="subtitle">Cups</h2>
     </div>
-    <Grid :products="products" />
-    <div>{{products}}</div>
+    <Grid :products="products" :index="false"/>
+   
   </main>
 </template>
 
@@ -23,7 +23,7 @@ export default {
     return context.app.$storyapi
       .get("cdn/stories", {
         version: process.env.NODE_ENV == "production" ? "published" : "draft",
-        starts_with: "products/",
+        starts_with: "products/cups",
       })
       .then((res) => {
         console.log(res);
@@ -35,7 +35,8 @@ export default {
               price: pr.content.price,
               imgsrc:pr.content.images[0].filename,
               incat:pr.content.incategory,
-              catlist:pr.tag_list
+              catlist:pr.tag_list,
+              full_slug:pr.full_slug
             };
           }),
         };

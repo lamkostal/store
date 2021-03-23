@@ -1,26 +1,31 @@
 <template>
   <div class="grid">
-      <div  v-for="product in products" :key="product.title" >
-               <Card
+     
+               <Card  v-for="product in products" :key="product.title"  
                 :title="product.title"
                 :desc="product.desc"
                 :price="product.price"
                 :imgsrc="product.imgsrc"
                 :imgalt="product.imgalt"
                 :catlist="product.catlist"
-
+                :index="index"
+                :full_slug="product.full_slug"
+              
                 />
-      </div>
+     
   </div>
 </template>
 
 <script>
 import Card from './Card.vue'
 export default {
-    props:['products'],
+    props:['products','index'],
     components:{
         Card
-    }
+    },
+   
+
+    
 
 }
 </script>
