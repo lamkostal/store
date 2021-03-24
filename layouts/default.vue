@@ -66,10 +66,8 @@ html {
   position: relative;
 }
 body{
-  --main-color:red;
   --danger-color:rgb(243, 82, 8);
-  --sec-color:black;
-  --main-accent-color:rgb(1, 121, 105);
+  --main-accent-color:rgb(17, 155, 109);
   --sec-accent-color: rgb(144, 231, 144);
   --main-bgcolor:#f2f2f2;
   --main-text-color:rgb(44, 44, 44);

@@ -8,17 +8,22 @@
           <div class="card__title"><h3>{{title}}</h3></div>
           <div class="card__details">
               <p class="prod-descr">{{desc}}</p>
-              <span class="prod-price">{{addcurrency}}</span>
-              <button class="icon cart-icon buy-button snipcart-add-item" title="add to cart"
-                :data-item-id="title"
-                :data-item-price="price"
-                :data-item-url="url"
-                :data-item-name="title"
-                :data-item-image="imgsrc"
-                :data-item-description="desc"
-              >
-                  <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20"> <path d="M2 2h4v4h16v11H4V4H2V2zm4 13h14V8H6v7zm0 4h3v3H6v-3zm14 0h-3v3h3v-3z" fill="black"/> </svg>
-              </button>
+              <div>
+                  <span class="prod-price">{{addcurrency}}</span>
+                  <button class="icon cart-icon buy-button snipcart-add-item" title="add to cart"
+                    :data-item-id="title"
+                    :data-item-price="price"
+                    :data-item-url="url"
+                    :data-item-name="title"
+                    :data-item-image="imgsrc"
+                    :data-item-description="desc"
+                  >
+                      <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20"> <path d="M2 2h4v4h16v11H4V4H2V2zm4 13h14V8H6v7zm0 4h3v3H6v-3zm14 0h-3v3h3v-3z" fill="black"/> </svg>
+                  
+                  </button>
+                  <div class="button-pop">add to cart</div>
+              </div>
+              
               </div>
       </div>
   </article>
@@ -87,24 +92,58 @@ export default {
 }
 .cart-icon{
     display: inline-block;
-    margin:0px 0  0 150px;
+    margin:10px 0  0 150px;
     border: none;
-    padding: 5px 10px;
+    padding: 7px 10px;
+    transition: all 0.2s ease-out;
+    transition-delay: 0.1s;
+    border-radius:0px 0 5px 0;
+    z-index: 1;
+    
 }
+.button-pop{
+    position: absolute;
+    top:10px;
+    right:65px;
+    background: var(--sec-accent-color);
+    height: 37px;
+    padding: 06.5px 0 0 0px ;
+    color: var(--main-text-color);
+    width:0;
+    transition: all 0.2s;
+    overflow: hidden;
+    white-space: nowrap;
+    border-radius:5px 0 0 0 ;
+    font-size: 1em;
+    font-weight: bold;
+
+}
+
 .cart-icon:hover{
-    background:var(--sec-accent-color)
+    background:var(--sec-accent-color);
+    cursor: pointer;
     }
+.cart-icon:hover + .button-pop{
+    transition: all 0.2s ease-out;
+    transition-delay: 0.2s;
+
+    width:100px;
+    padding: 06.5px 0px 0 3px ;
+  
+    
+
+    } 
 .featured{
     position:absolute;
     top:0px;
     height: auto;
-    padding: 5px;
+    padding:4px 7px;
     background:var(--main-accent-color);
     color:#fff;
-    z-index: 200;
+    z-index: 01;
     font-size: 0.8em;
+    font-weight: 300;
     border-radius: 0 0  5px;
-
 } 
 
 </style>

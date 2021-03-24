@@ -13,15 +13,11 @@ export default {
 <style>
 .hero-container{
     height: 25vh;
-    /* background:cornflowerblue; */
-   background: url(@/static/heropat-50.png),
-   linear-gradient(105deg, #00cbd5, #0082c0, #0044ab) 
-   ;
-
+    background: url(@/static/wiggle.svg) ,linear-gradient(15deg, var(--sec-accent-color), var(--main-accent-color)) ;
     display:flex;
     justify-content: center;
     align-items: center;
-    color: blanchedalmond;
+    color: rgb(255, 255, 255);
     text-align: center;
 }
 
