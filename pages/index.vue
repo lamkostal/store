@@ -54,16 +54,6 @@ main{
   flex-grow: 1;
 }
 
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: center;
-  max-width: 1360px;
-  margin: 20px auto;
-
-}
 .headers{
   margin:20px 0 50px;
 

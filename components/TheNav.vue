@@ -18,7 +18,7 @@
           <nav>
             <ul class="cat-list">
               <li v-for="cat in categories" :key="cat.name">
-                <nuxt-link :to="cat.link" exact>{{ cat.name }}</nuxt-link>
+                <nuxt-link :to="cat.link" >{{ cat.name }}</nuxt-link>
               </li>
             </ul>
           </nav>
@@ -49,9 +49,9 @@ export default {
       data() {
     return {
       categories: [
-        { link: "tshirts", name: "TEES" },
-        { link: "cups", name: "CUPS" },
-        { link: "baseball", name: "BASEBALL-TEES" },
+        { link: "/tshirts", name: "TEES" },
+        { link: "/cups", name: "CUPS" },
+        { link: "/baseball", name: "BASEBALL-TEES" },
       ],
     };
   },

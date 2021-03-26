@@ -3,7 +3,7 @@
       <div class="card-container" >
          <div v-if="isFeatured" class="ribon featured">featured</div>
           <div class="card__image">
-              <a href="#"><img :src="imgsrc" :alt="imgalt"></a>
+              <nuxt-link :to="routeLink"><img :src="imgsrc" :alt="imgalt"></nuxt-link>
           </div>
           <div class="card__title"><h3>{{title}}</h3></div>
           <div class="card__details">
@@ -48,8 +48,14 @@ export default {
     },
     isFeatured(){
         return this.catlist.includes('index')
+    },
+    routeLink(){
+        return this.full_slug.substring(9)
     }
      
+    },
+    mounted(){
+        console.log(this.routeLink)
     }
 }
 </script>

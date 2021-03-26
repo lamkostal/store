@@ -77,6 +77,16 @@ body{
   overflow: visible;
   
 }
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  max-width: 1360px;
+  margin: 20px auto;
+
+}
 button{
     background: transparent;
 }
@@ -93,6 +103,9 @@ button:focus{
 a{
   color:var(--main-accent-color);
   text-decoration: none;
+}
+img{
+  max-width: 100%;
 }
 .demo-banner{
   height:70px;
