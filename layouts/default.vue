@@ -24,6 +24,8 @@ import Hero from '../components/TheHero.vue'
 import Nav from '../components/TheNav.vue'
 import Footer from '../components/TheFooter.vue'
 export default {
+
+
   components:{
     Head,
     Nav,
@@ -63,7 +65,7 @@ html {
   box-sizing: border-box;
   margin: 0;
   /* overflow-y:visible;  */
-  position: relative;
+  /* position: relative; */
 }
 body{
   --danger-color:rgb(243, 82, 8);
@@ -148,7 +150,30 @@ img{
 }
 
 /* //transitions// */
- .fade-enter-active, .fade-leave-active { transition: all .5s; }
+ .fade-enter-active, .fade-leave-active { transition: all .2s; }
   .fade-enter, .fade-leave-active { opacity: 0; }
+.snipcart-cart-button{
+  background:linear-gradient(10deg,var(--main-accent-color),var(--sec-accent-color));
+   
+  }
+/* overide snipcart styles */
+
+  .snipcart-cart-button:hover{
+  background:linear-gradient(10deg,var(--sec-accent-color),var(--main-accent-color));
+  }
+  .snipcart-cart-header path{
+    fill:var(--main-accent-color)
+  }
+  .snipcart__box--badge-highlight{
+    background: linear-gradient(
+90deg,var(--sec-accent-color),var(--main-accent-color));
+  }
+  .snipcart__actions--link{
+    color: var(--main-accent-color);
+  }
+  .snipcart-cart-header,.snipcart-cart__secondary-header,.snipcart-modal{
+    background: var(--main-bgcolor);
+    /* color: var(--main-bgcolor); */
+  }
 
 </style>

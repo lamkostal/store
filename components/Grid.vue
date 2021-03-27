@@ -1,19 +1,23 @@
 <template>
+            
+
   <div class="grid">
      
-               <Card  v-for="product in products" :key="product.title"  
-                :title="product.title"
-                :desc="product.desc"
-                :price="product.price"
-                :imgsrc="product.imgsrc"
-                :imgalt="product.imgalt"
-                :catlist="product.catlist"
-                :index="index"
-                :full_slug="product.full_slug"
-              
-                />
+                   <Card  v-for="product in products" :key="product.title"  
+                    :title="product.title"
+                    :desc="product.desc"
+                    :price="product.price"
+                    :imgsrc="product.imgsrc"
+                    :imgalt="product.imgalt"
+                    :catlist="product.catlist"
+                    :index="index"
+                    :full_slug="product.full_slug"
+                  
+                    />
      
   </div>
+          
+
 </template>
 
 <script>
@@ -23,7 +27,7 @@ export default {
     components:{
         Card
     },
-   
+    
 
     
 

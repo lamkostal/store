@@ -11,6 +11,7 @@
 <script>
 import Grid from "../components/Grid.vue";
 export default {
+    transition: 'fade',
   components: {
     Grid,
   },

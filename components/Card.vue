@@ -1,31 +1,33 @@
 <template>
   <article v-if="hasCurrentCat">
-      <div class="card-container" >
-         <div v-if="isFeatured" class="ribon featured">featured</div>
-          <div class="card__image">
-              <nuxt-link :to="routeLink"><img :src="imgsrc" :alt="imgalt"></nuxt-link>
-          </div>
-          <div class="card__title"><h3>{{title}}</h3></div>
-          <div class="card__details">
-              <p class="prod-descr">{{desc}}</p>
-              <div>
-                  <span class="prod-price">{{addcurrency}}</span>
-                  <button class="icon cart-icon buy-button snipcart-add-item" title="add to cart"
-                    :data-item-id="title"
-                    :data-item-price="price"
-                    :data-item-url="url"
-                    :data-item-name="title"
-                    :data-item-image="imgsrc"
-                    :data-item-description="desc"
-                  >
-                      <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20"> <path d="M2 2h4v4h16v11H4V4H2V2zm4 13h14V8H6v7zm0 4h3v3H6v-3zm14 0h-3v3h3v-3z" fill="black"/> </svg>
+      
+          <div class="card-container" >
+             <div v-if="isFeatured" class="ribon featured">featured</div>
+              <div class="card__image">
+                  <nuxt-link :to="routeLink"><img :src="imgsrc" :alt="imgalt"></nuxt-link>
+              </div>
+              <div class="card__title"><h3>{{title}}</h3></div>
+              <div class="card__details">
+                  <p class="prod-descr">{{desc}}</p>
+                  <div>
+                      <span class="prod-price">{{addcurrency}}</span>
+                      <button class="icon cart-icon buy-button snipcart-add-item" title="add to cart"
+                        :data-item-id="title"
+                        :data-item-price="price"
+                        :data-item-url="url"
+                        :data-item-name="title"
+                        :data-item-image="imgsrc"
+                        :data-item-description="desc"
+                      >
+                          <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20"> <path d="M2 2h4v4h16v11H4V4H2V2zm4 13h14V8H6v7zm0 4h3v3H6v-3zm14 0h-3v3h3v-3z" fill="black"/> </svg>
+                      
+                      </button>
+                      <div class="button-pop">add to cart</div>
+                  </div>
                   
-                  </button>
-                  <div class="button-pop">add to cart</div>
-              </div>
-              
-              </div>
-      </div>
+                  </div>
+          </div>
+      
   </article>
 </template>
 
@@ -70,6 +72,7 @@ export default {
     margin: auto;
     overflow: hidden;
     background: rgb(255, 255, 255);
+    position: relative;
 }
 .card__title{
     margin:10px 0 0 0;
@@ -95,6 +98,10 @@ export default {
 .card__details{
     margin: 5px 0;
     padding: 0 0 10px;
+}
+.card__details>div{
+    position: relative;
+
 }
 .cart-icon{
     display: inline-block;
