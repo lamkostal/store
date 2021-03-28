@@ -57,7 +57,9 @@ export default {
      
     },
     mounted(){
-        console.log(this.routeLink)
+        console.log("routelink:"+this.routeLink)
+        console.log("slug:"+this.slug)
+
     }
 }
 </script>

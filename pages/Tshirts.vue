@@ -2,7 +2,7 @@
   <main>
    <div class="headers"> 
      <h2 class="subtitle">T-shirts</h2></div>
-      <Grid :products="products" :index="false"/>
+      <Grid :products="products" />
   </main>
 </template>
 
