@@ -12,6 +12,7 @@
                     :catlist="product.catlist"
                     :index="index"
                     :full_slug="product.full_slug"
+                    :size="product.size"
                   
                     />
      

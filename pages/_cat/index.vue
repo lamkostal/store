@@ -1,7 +1,7 @@
 <template>
   <main>
       <div class="headers">
-        <h2 class="subtitle">featured products</h2>
+        <h2 class="subtitle">{{$route.params.cat}}</h2>
       </div>
       <Grid :products="products" />
 
@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Grid from '../components/Grid.vue'
+import Grid from '../../components/Grid.vue'
 
 
 export default {
@@ -18,20 +18,18 @@ export default {
   components: {
     Grid
   },
-  data(){
-    return{
-     
-    }
-  },
    asyncData(context) {
     return context.app.$storyapi
       .get("cdn/stories", {
         version: process.env.NODE_ENV == "production" ? "published" : "draft",
-        starts_with: "products/",
+        starts_with: `products/${context.params.cat}`,
       })
       .then((res) => {
-        // console.log(...res.data);
-        return {
+        console.log(res);
+        if(!res.data.stories.length){
+           throw "erroo"
+        }
+         return {
           products: res.data.stories.map((pr) => {
             return {
               title: pr.content.name,
@@ -39,15 +37,21 @@ export default {
               price: pr.content.price,
               imgsrc:pr.content.images[0].filename,
               incat:pr.content.incategory,
-              size:pr.content.size,
               catlist:pr.tag_list,
               full_slug:pr.full_slug,
+              size:pr.content.size
             };
           }),
         };
+        
       })
-      .catch((e) => console.log(e));
+      .catch((e) => {
+          console.log(e)
+            context.error({ statusCode: 404, message: 'Page does not exist' })
+          }
+          );
   },
+  
 }
 </script>
 

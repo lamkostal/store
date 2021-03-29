@@ -8,6 +8,7 @@
         <div>
           <h1>{{singleProduct.title}}</h1>
           <p>{{singleProduct.desc}}</p>
+          <div class="product-options"><span v-if="hasSize">Available sizes: </span><span class="size-options">{{hasSizeOptions}}</span></div>
         </div>
         <div>
           <span class="price">${{singleProduct.price}}</span>
@@ -19,6 +20,8 @@
                     :data-item-name="singleProduct.title"
                     :data-item-image="singleProduct.imgsrc"
                     :data-item-description="singleProduct.desc"
+                    :data-item-custom1-name="hasSize?'Size':false"
+                    :data-item-custom1-options="hasSize?hasSizeOptions:false">
           ><span>Add to cart</span>
            <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="25"> <path d="M2 2h4v4h16v11H4V4H2V2zm4 13h14V8H6v7zm0 4h3v3H6v-3zm14 0h-3v3h3v-3z" fill="black"/> </svg>
           </button>
@@ -49,7 +52,8 @@ export default {
               incat:pr.content.incategory,
               catlist:pr.tag_list,
               full_slug:pr.full_slug,
-              slug:pr.slug
+              slug:pr.slug,
+              size:pr.content.size
             };
           }),
         };
@@ -59,7 +63,18 @@ export default {
   computed:{
     singleProduct(){
       return this.products.find((e)=>e.slug===this.$route.params.id)
-    }
+    },
+    hasSize(){
+        return this.singleProduct.size.length
+    },
+    hasSizeOptions(){
+       var size = this.singleProduct.size
+       var loop = ''
+       for (var i=0; i<size.length; i++){
+            loop+= size[i]+"|"}
+          var  result=loop.substring(0, loop.length - 1)
+       return result
+        }
   }
 
 }
@@ -88,6 +103,9 @@ export default {
   flex-direction: column;
   justify-content: space-between;
 }
+.product-details p{
+  margin: 2em;
+}
 .product .btn{
   width: 100%;
   border: none;
@@ -113,6 +131,13 @@ export default {
   }
 .product .price{
   font-size: 2.5em;
+}
+.product-options{
+  margin: 1em;
+}
+.size-options{
+  font-size: 1.1em;
+  font-weight: bold;
 }
 
 

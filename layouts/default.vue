@@ -161,6 +161,10 @@ img{
   .snipcart-cart-button:hover{
   background:linear-gradient(10deg,var(--sec-accent-color),var(--main-accent-color));
   }
+  .snipcart-cart-button--secondary {
+    color: var(--main-bgcolor);
+   
+}
   .snipcart-cart-header path{
     fill:var(--main-accent-color)
   }
@@ -173,7 +177,7 @@ img{
   }
   .snipcart-cart-header,.snipcart-cart__secondary-header,.snipcart-modal{
     background: var(--main-bgcolor);
-    /* color: var(--main-bgcolor); */
+    
   }
 
 </style>

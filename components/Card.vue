@@ -18,7 +18,9 @@
                         :data-item-name="title"
                         :data-item-image="imgsrc"
                         :data-item-description="desc"
-                      >
+                        :data-item-custom1-name="hasSize?'Size':false"
+                        :data-item-custom1-options="hasSize?hasSizeOptions:false">
+                    
                           <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20"> <path d="M2 2h4v4h16v11H4V4H2V2zm4 13h14V8H6v7zm0 4h3v3H6v-3zm14 0h-3v3h3v-3z" fill="black"/> </svg>
                       
                       </button>
@@ -34,31 +36,51 @@
 <script>
 
 export default {
-    props:['title','desc','price','imgsrc','imgalt','catlist','index','full_slug'],
+    props:['title','desc','price','imgsrc','imgalt','catlist','index','full_slug','size'],
     data(){
         return{
-            slug:this.$route.name,
-            url:"http://localhost:3000"+this.$route.path,
+            // slug:this.$route.name,
+            url:"http://localhost:3000"+this.$route.path, 
         }
     },
     computed:{
+         slug(){return this.$route.path},
       addcurrency(){
         return  "$ "+ this.price
         },
       hasCurrentCat(){
          return this.catlist.includes(this.slug)||this.full_slug.includes(this.slug)      
-    },
-    isFeatured(){
+     },
+     isFeatured(){
         return this.catlist.includes('index')
-    },
-    routeLink(){
+     },
+      routeLink(){
         return this.full_slug.substring(9)
-    }
-     
     },
-    mounted(){
-        console.log("routelink:"+this.routeLink)
+    hasSize(){
+        return this.size.length
+    },
+    hasSizeOptions(){
+       var size = this.size
+       var loop = ''
+       for (var i=0; i<size.length; i++){
+            loop+= size[i]+"|"}
+          var  result=loop.substring(0, loop.length - 1)
+       return result
+        }
+       
+       
+    
+     
+     },
+      mounted(){
         console.log("slug:"+this.slug)
+       
+        console.log("size:"+this.size)
+        console.log("name:"+this.title+' sizeoptions:'+this.hasSizeOptions)
+
+
+
 
     }
 }
