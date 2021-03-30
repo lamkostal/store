@@ -3,6 +3,9 @@
       
           <div class="card-container" >
              <div v-if="isFeatured" class="ribon featured">featured</div>
+             <div v-if="sales" class="ribon sales">sales</div>
+
+
               <div class="card__image">
                   <nuxt-link :to="routeLink"><img :src="imgsrc" :alt="imgalt"></nuxt-link>
               </div>
@@ -13,9 +16,12 @@
                   <p class="prod-descr">{{desc}}</p>
                   <div>
                       <span class="prod-price">{{addcurrency}}</span>
+                      <span class="prod-disprice" v-if="sales">{{salesPrice}}</span>
+
+
                       <button class="icon cart-icon buy-button snipcart-add-item" title="add to cart"
                         :data-item-id="title"
-                        :data-item-price="price"
+                        :data-item-price="finalPrice"
                         :data-item-url="url"
                         :data-item-name="title"
                         :data-item-image="imgsrc"
@@ -38,7 +44,7 @@
 <script>
 
 export default {
-    props:['title','desc','price','imgsrc','imgalt','catlist','index','full_slug','size','index'],
+    props:['title','desc','price','imgsrc','imgalt','catlist','index','full_slug','size','index','sales','discount'],
     data(){
         return{
             // slug:this.$route.name,
@@ -50,9 +56,14 @@ export default {
       addcurrency(){
         return  "$ "+ this.price
         },
-     
-     isFeatured(){
-        return this.index
+        salesPrice(){
+            return "$ "+ (this.price*(1-this.discount/100)).toFixed(2)
+        },
+        finalPrice(){
+            return  this.sales? (this.price*(1-this.discount/100)).toFixed(2) : this.price
+        },
+        isFeatured(){
+          return this.index
      },
       routeLink(){
         return this.full_slug.substring(9)
@@ -189,5 +200,28 @@ export default {
     font-weight: 300;
     border-radius: 0 0  5px;
 } 
+.sales{
+    position:absolute;
+    top:0px;
+    right: 0;
+    height: auto;
+    padding:4px 7px;
+    background:var(--danger-color) ;
+    color:#fff;
+    z-index: 0;
+    font-size: 0.8em;
+    font-weight: 300;
+    border-radius: 0 0  5px;
+} 
+.prod-disprice{
+     position:absolute;
+     top:-2px;
+     left: 17px;
+     font-weight: bold;
+     font-size: 1.2em;
+     transform: rotate(15deg);
+   
+     color:var(--danger-color) ;
+}
 
 </style>

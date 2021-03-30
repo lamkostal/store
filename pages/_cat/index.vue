@@ -39,7 +39,9 @@ export default {
               incat:pr.content.incategory,
               catlist:pr.tag_list,
               full_slug:pr.full_slug,
-              size:pr.content.size
+              size:pr.content.size,
+              sales:pr.content.sales,
+              discount:pr.content.discount
             };
           }),
         };
