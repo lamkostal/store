@@ -106,6 +106,7 @@ a{
   color:var(--main-accent-color);
   text-decoration: none;
 }
+
 img{
   max-width: 100%;
 }
@@ -153,20 +154,27 @@ img{
  .fade-enter-active, .fade-leave-active { transition: all .2s; }
   .fade-enter, .fade-leave-active { opacity: 0; }
 .snipcart-cart-button{
-  background:linear-gradient(10deg,var(--main-accent-color),var(--sec-accent-color));
+    transition: all .4s;
+
+  background:linear-gradient(0deg,var(--main-accent-color),var(--sec-accent-color));
+  background-size:100px 80px;  
+  /* background-size: cover; */
+ 
+  /* background-repeat: no-repeat; */
    
   }
 /* overide snipcart styles */
 
   .snipcart-cart-button:hover{
-  background:linear-gradient(10deg,var(--sec-accent-color),var(--main-accent-color));
+  /* background:linear-gradient(10deg,var(--sec-accent-color),var(--main-accent-color)); */
+  background-position:100px;
   }
   .snipcart-cart-button--secondary {
     color: var(--main-bgcolor);
    
 }
-  .snipcart-cart-header path{
-    fill:var(--main-accent-color)
+.snipcart-cart-button--secondary .snipcart__icon path{
+    fill:var(--main-accent-color) !important
   }
   .snipcart__box--badge-highlight{
     background: linear-gradient(
@@ -178,6 +186,11 @@ img{
   .snipcart-cart-header,.snipcart-cart__secondary-header,.snipcart-modal{
     background: var(--main-bgcolor);
     
+  }.snipcart__icon--blue-light path,.snipcart__icon--blue-dark path{
+    fill: var(--main-accent-color);
   }
+  
+   
+
 
 </style>

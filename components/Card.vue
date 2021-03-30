@@ -1,12 +1,14 @@
 <template>
-  <article v-if="hasCurrentCat">
+  <article >
       
           <div class="card-container" >
              <div v-if="isFeatured" class="ribon featured">featured</div>
               <div class="card__image">
                   <nuxt-link :to="routeLink"><img :src="imgsrc" :alt="imgalt"></nuxt-link>
               </div>
-              <div class="card__title"><h3>{{title}}</h3></div>
+                  <nuxt-link :to="routeLink"> 
+                      <div class="card__title"><h3>{{title}}</h3></div>
+                </nuxt-link>
               <div class="card__details">
                   <p class="prod-descr">{{desc}}</p>
                   <div>
@@ -36,7 +38,7 @@
 <script>
 
 export default {
-    props:['title','desc','price','imgsrc','imgalt','catlist','index','full_slug','size'],
+    props:['title','desc','price','imgsrc','imgalt','catlist','index','full_slug','size','index'],
     data(){
         return{
             // slug:this.$route.name,
@@ -48,11 +50,9 @@ export default {
       addcurrency(){
         return  "$ "+ this.price
         },
-      hasCurrentCat(){
-         return this.catlist.includes(this.slug)||this.full_slug.includes(this.slug)      
-     },
+     
      isFeatured(){
-        return this.catlist.includes('index')
+        return this.index
      },
       routeLink(){
         return this.full_slug.substring(9)
@@ -104,6 +104,13 @@ export default {
     color:var(--main-text-color);
 
 }
+.card__title:hover{
+    margin:10px 0 0 0;
+    font-size: 1.1em;
+    color:var(--main-accent-color);
+
+}
+
 .card__image{
     height: 250px;
     background: rgb(255, 255, 255);
@@ -135,7 +142,7 @@ export default {
     transition: all 0.2s ease-out;
     transition-delay: 0.1s;
     border-radius:0px 0 5px 0;
-    z-index: 1;
+    z-index: 0;
     
 }
 .button-pop{
@@ -177,7 +184,7 @@ export default {
     padding:4px 7px;
     background:var(--main-accent-color);
     color:#fff;
-    z-index: 01;
+    z-index: 0;
     font-size: 0.8em;
     font-weight: 300;
     border-radius: 0 0  5px;

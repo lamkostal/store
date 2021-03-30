@@ -3,7 +3,7 @@
       <div class="headers">
         <h2 class="subtitle">featured products</h2>
       </div>
-      <Grid :products="products" />
+      <Grid :products="products" index='true'/>
 
   </main>
 </template>
@@ -28,6 +28,7 @@ export default {
       .get("cdn/stories", {
         version: process.env.NODE_ENV == "production" ? "published" : "draft",
         starts_with: "products/",
+        filter_query:{featured:{in:true}}
       })
       .then((res) => {
         // console.log(...res.data);

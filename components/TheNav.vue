@@ -78,7 +78,7 @@ export default {
      position:sticky;
      top:0;
      background:var(--main-bgcolor);
-     z-index: 0;
+     z-index: 1;
      border-bottom: 1px solid darkgray;
      padding: 10px 20px;
     

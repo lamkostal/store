@@ -22,7 +22,7 @@
                     :data-item-description="singleProduct.desc"
                     :data-item-custom1-name="hasSize?'Size':false"
                     :data-item-custom1-options="hasSize?hasSizeOptions:false">
-          ><span>Add to cart</span>
+          <span>Add to cart</span>
            <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="25"> <path d="M2 2h4v4h16v11H4V4H2V2zm4 13h14V8H6v7zm0 4h3v3H6v-3zm14 0h-3v3h3v-3z" fill="black"/> </svg>
           </button>
         </div>
