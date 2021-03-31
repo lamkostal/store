@@ -34,15 +34,18 @@ export default {
         // console.log(...res.data);
         return {
           products: res.data.stories.map((pr) => {
-            return {
+           return {
               title: pr.content.name,
               desc: pr.content.description,
               price: pr.content.price,
               imgsrc:pr.content.images[0].filename,
               incat:pr.content.incategory,
-              size:pr.content.size,
               catlist:pr.tag_list,
               full_slug:pr.full_slug,
+              size:pr.content.size,
+              sales:pr.content.sales,
+              discount:pr.content.discount,
+              // featured:pr.content.featured
             };
           }),
         };

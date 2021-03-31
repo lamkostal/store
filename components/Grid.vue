@@ -15,6 +15,7 @@
                     :size="product.size"
                     :sales="product.sales"
                     :discount="product.discount"
+                    :featured="product.featured"
                    
                     />
      

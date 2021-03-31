@@ -11,11 +11,12 @@
           <div class="product-options"><span v-if="hasSize">Available sizes: </span><span class="size-options">{{hasSizeOptions}}</span></div>
         </div>
         <div>
-          <span class="price">${{singleProduct.price}}</span>
+          <span class="price" :class="{strikeline : singleProduct.sales}">€{{singleProduct.price}}</span>
+          <span class="price salesprice" v-if="singleProduct.sales">€{{finalPrice}}</span>
           <button 
           class="btn buy-button snipcart-add-item"
           :data-item-id="singleProduct.title"
-                    :data-item-price="singleProduct.price"
+                    :data-item-price="finalPrice"
                     :data-item-url="singleProduct.url"
                     :data-item-name="singleProduct.title"
                     :data-item-image="singleProduct.imgsrc"
@@ -53,7 +54,9 @@ export default {
               catlist:pr.tag_list,
               full_slug:pr.full_slug,
               slug:pr.slug,
-              size:pr.content.size
+              size:pr.content.size,
+              sales:pr.content.sales,
+              discount:pr.content.discount,
             };
           }),
         };
@@ -74,10 +77,14 @@ export default {
             loop+= size[i]+"|"}
           var  result=loop.substring(0, loop.length - 1)
        return result
-        }
+        },
+     salesPrice(){
+            return  this.singleProduct.price*(1-this.singleProduct.discount/100).toFixed(2)
+        },
+    finalPrice(){
+            return  this.singleProduct.sales? (this.singleProduct.price*(1-this.singleProduct.discount/100)).toFixed(2) : this.singleProduct.price
   }
-
-}
+}}
 </script>
 
 <style>
@@ -131,6 +138,10 @@ export default {
   }
 .product .price{
   font-size: 2.5em;
+}
+.salesprice{
+  color: var(--danger-color);
+  font-weight: bold;
 }
 .product-options{
   margin: 1em;

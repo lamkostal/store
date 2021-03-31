@@ -68,7 +68,7 @@ html {
   /* position: relative; */
 }
 body{
-  --danger-color:rgb(243, 82, 8);
+  --danger-color:rgb(243, 55, 8);
   --main-accent-color:rgb(17, 155, 109);
   --sec-accent-color: rgb(144, 231, 144);
   --main-bgcolor:#f2f2f2;
@@ -97,10 +97,10 @@ button:visited{
 }
 :focus{outline-color:var(--main-accent-color) ;}
 button:focus{
-  outline-color:var(--main-accent-color) ;
-  outline-offset: 2px;
-  outline-style: dashed;  
-  outline-width: 2px;
+  
+  outline-offset: 3px;
+
+  outline-width: 1px;
 }
 a{
   color:var(--main-accent-color);
@@ -112,7 +112,7 @@ img{
 }
 .demo-banner{
   height:70px;
-  background: var(--main-accent-color);
+  background: var(--danger-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -189,7 +189,25 @@ img{
   }.snipcart__icon--blue-light path,.snipcart__icon--blue-dark path{
     fill: var(--main-accent-color);
   }
-  
+  .snipcart-form__select:focus {
+    outline: none;
+    border: 1px solid var(--sec-accent-color)  ;
+}
+.snipcart-input:focus-within {
+    outline: none;
+    border: 1px solid var(--sec-accent-color);
+    box-shadow: 0 8px 14px 0 #dee0e0;
+}
+.snipcart-form__address-autocomplete>div:focus{
+    outline: none;
+    border: 1px solid var(--sec-accent-color);
+    box-shadow: 0 8px 14px 0 #dee0e0;
+    
+}
+.snipcart__button--icon:active, .snipcart__button--icon:focus {
+    outline: none;
+    border: 1px solid var(--sec-accent-color);
+}
    
 
 

@@ -41,7 +41,8 @@ export default {
               full_slug:pr.full_slug,
               size:pr.content.size,
               sales:pr.content.sales,
-              discount:pr.content.discount
+              discount:pr.content.discount,
+              featured:pr.content.featured
             };
           }),
         };
