@@ -17,8 +17,8 @@
           </div>
           <nav>
             <ul class="cat-list">
-              <li v-for="cat in categories" :key="cat.name">
-                <nuxt-link :to="cat.link" >{{ cat.name }}</nuxt-link>
+              <li v-for="cat in categories" :key="cat.title">
+                <nuxt-link :to="'/'+cat.title" >{{ cat.title }}</nuxt-link>
               </li>
             </ul>
           </nav>
@@ -39,8 +39,11 @@
             </button>
             <span class="snipcart-total-price">$0.00</span>
             (<span class="snipcart-items-count">0</span>)
+         <span></span>
           </div>
        </div>
+        
+     
     </div>
 </template>
 
@@ -48,13 +51,30 @@
 export default {
       data() {
     return {
-      categories: [
-        { link: "/tshirts", name: "TEES" },
-        { link: "/cups", name: "CUPS" },
-        { link: "/baseball", name: "BASEBALL-TEES" },
-      ],
-    };
+      categories: []
+    }
   },
+ async fetch(){
+     this.categories = await this.$nuxt.context.app.$storyapi
+      .get("cdn/stories", {
+        version: process.env.NODE_ENV == "production" ? "published" : "draft",
+        starts_with: 'categories/',
+      })
+      .then((res) => {
+        return  res.data.stories.map( c => {
+                    return {
+                      title: c.name
+                    }
+                  })
+
+      })
+       
+    },
+    fetchOnServer: false
+    
+      
+  
+  
 
 }
 </script>

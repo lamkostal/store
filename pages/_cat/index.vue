@@ -25,7 +25,7 @@ export default {
         starts_with: `products/${context.params.cat}`,
       })
       .then((res) => {
-        console.log(res);
+        
         if(!res.data.stories.length){
            throw "erroo"
         }
