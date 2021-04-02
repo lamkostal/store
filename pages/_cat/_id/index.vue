@@ -1,22 +1,28 @@
 <template>
   <main>
     <article class="product">
-      <div class="images">
-        <img :src="singleProduct.imgsrc" :alt="singleProduct.desc" />
+      <div class="images v-flex">
+       <div class="main-img"> <img :src="mainSrc" :alt="singleProduct.imgs[0].alt" /></div>
+        <!-- <div class="thumbs" v-if="singleProduct.imgs.length>1">
+          <img v-for="(img, index) in singleProduct.imgs" :src="img.filename" :alt="img.alt" :key="index" />
+        </div> -->
       </div>
       <div class="product-details">
         <div>
           <h1>{{ singleProduct.title }}</h1>
           <p>{{ singleProduct.desc }}</p>
           <div class="product-options">
-            <div class="h-flex">
-              <span v-if="hasSize">Available sizes: </span
-              ><span class="size-options">{{ hasSizeOptions }}</span>
+            <div class="h-flex product-options__item" v-if="hasSize">
+              <span >Available sizes:
+                 </span
+              ><div><span class="size-options">{{ hasSizeOptions }}</span></div>
             </div>
-             <div class="v-flex">
+             <div class="v-flex product-options__item" v-if="hasColor">
               <span v-if="hasSize">Available colors: </span >
               <div>
-                <div class="color-box" v-for="(color,index) in productColorsArr" :style="{background:color.color}" :key="index">{{index + 1}}</div>
+                <div @click="chooseImage(index)" class="color-box" v-for="(item,index) in singleProduct.colors" :style="{background:item.chroma.color}" :key="index">
+                  <span>{{item.chroma_name}}</span>
+                </div>
               </div>
             </div>
           </div>
@@ -34,10 +40,12 @@
             :data-item-price="finalPrice"
             :data-item-url="singleProduct.url"
             :data-item-name="singleProduct.title"
-            :data-item-image="singleProduct.imgsrc"
+            :data-item-image="mainSrc"
             :data-item-description="singleProduct.desc"
             :data-item-custom1-name="hasSize ? 'Size' : false"
             :data-item-custom1-options="hasSize ? hasSizeOptions : false"
+           
+            
           >
             <span>Add to cart</span>
             <svg
@@ -60,6 +68,11 @@
 
 <script>
 export default {
+  data(){
+    return{
+      src:''
+    }
+  },
   asyncData(context) {
     return context.app.$storyapi
       .get("cdn/stories", {
@@ -74,7 +87,7 @@ export default {
               title: pr.content.name,
               desc: pr.content.description,
               price: pr.content.price,
-              imgsrc: pr.content.images[0].filename,
+              imgs: pr.content.images,
               incat: pr.content.incategory,
               catlist: pr.tag_list,
               full_slug: pr.full_slug,
@@ -82,11 +95,8 @@ export default {
               size: pr.content.size,
               sales: pr.content.sales,
               discount: pr.content.discount,
-              color1: pr.content.color1,
-              color2: pr.content.color2,
+              colors: pr.content.colors,
               
-
-
             };
           }),
         };
@@ -97,8 +107,9 @@ export default {
     singleProduct() {
       return this.products.find((e) => e.slug === this.$route.params.id);
     },
-    productColorsArr(){
-      return Object.values(this.singleProduct).filter(item => Object.keys(item).includes('color') && item.color.length)
+   
+    hasColor(){
+      return this.singleProduct.colors.length
     },
     hasSize() {
       return this.singleProduct.size.length;
@@ -108,6 +119,15 @@ export default {
       var loop = "";
       for (var i = 0; i < size.length; i++) {
         loop += size[i] + "|";
+      }
+      var result = loop.substring(0, loop.length - 1);
+      return result;
+    },
+    ColorOptions() {
+     var colors = this.singleProduct.colors;
+      var loop = "";
+      for (var i = 0; i < colors.length; i++) {
+        loop += colors[i].chroma_name + "|";
       }
       var result = loop.substring(0, loop.length - 1);
       return result;
@@ -126,9 +146,18 @@ export default {
           ).toFixed(2)
         : this.singleProduct.price;
     },
+    mainSrc(){
+      return this.src.length?this.src:this.singleProduct.imgs[0].filename
+    }
+  },
+  methods:{
+    chooseImage(index){
+       this.src = this.singleProduct.imgs[index].filename
+      console.log('fired'+index)
+    }
   },
   mounted(){
-    console.log(this.productColorsArr)
+    console.log(this.ColorOptions)
   }
 };
 </script>
@@ -146,19 +175,31 @@ export default {
   flex: 1;
 }
 .product .images {
-  border: 1px solid var(--sec-text-color);
+  /* border: 1px solid var(--sec-text-color); */
+  
   padding: 1rem;
   border-radius: 10px;
-  max-width: 313px;
+  max-width: 300px;
+}
+.thumbs img{
+  width:80px;
+  display: inline-block;
+  border: 1px solid #000;
+  margin: 0.2em;
 }
 .product-details {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.product-details p {
-  margin: 2em;
+.product-details h1{
+  text-align: left;
 }
+.product-details p {
+  margin: 2em 0;
+  text-align: left;
+}
+
 .product .btn {
   width: 100%;
   border: none;
@@ -176,7 +217,6 @@ export default {
 .btn:hover {
   background: var(--main-accent-color);
   color: #fff;
-  fill: blanchedalmond;
 }
 .btn svg {
   margin: 0 1em;
@@ -188,19 +228,42 @@ export default {
   color: var(--danger-color);
   font-weight: bold;
 }
-.product-options {
-  margin: 1em;
+
+.product-options__item>span{
+  border-bottom: 1px solid rgb(119, 119, 119);
+  padding: 0.2em 0;
+  margin:00 0 0.5em ;
+
+}
+.product-options__item{
+  margin: 1em 0; 
+  
 }
 .size-options {
   font-size: 1.1em;
   font-weight: bold;
+  letter-spacing: 5px;
 }
 .color-box{
-  width:40px;
-  height:40px;
+  transition: all 0.2s;
+  width:35px;
+  height:35px;
   display: inline-block;
-  margin: 1em 0.5em 0 0em ;
-  border: 1px solid grey;
+  margin: 1.2em 0.5em 0 0em ;
+  border-radius: 5px;
+  position: relative;
+  box-shadow:  1px 2px 5px 0 rgb(172, 172, 172);
+  cursor: pointer;
+}
+.color-box:hover{
+  
+  box-shadow:  0px 5px 7px 0 rgb(172, 172, 172);
+  
+}
+.color-box span{
+  position: absolute;
+  top: -22px;
+  left:0;
 }
 .h-flex{
   display: flex;
@@ -211,5 +274,6 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: space-around;
 }
 </style>
