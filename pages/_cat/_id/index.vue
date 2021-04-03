@@ -1,15 +1,16 @@
 <template>
   <main>
     <article class="product">
+      <transition name="fade"><div @click="isOpen=!isOpen" class="zoom-image" v-if="isOpen"><img :src="mainSrc" alt=""></div></transition>
       <div class="images v-flex">
-       <div class="main-img"> <img :src="mainSrc" :alt="singleProduct.imgs[0].alt" /></div>
+       <div class="main-img" @click="isOpen=!isOpen"> <img :src="repMainSrc" alt="" /></div>
         <!-- <div class="thumbs" v-if="singleProduct.imgs.length>1">
           <img v-for="(img, index) in singleProduct.imgs" :src="img.filename" :alt="img.alt" :key="index" />
         </div> -->
       </div>
       <div class="product-details">
         <div>
-          <h1>{{ singleProduct.title }}</h1>
+          <h1>{{ singleProduct.title }} {{chromaName}}</h1>
           <p>{{ singleProduct.desc }}</p>
           <div class="product-options">
             <div class="h-flex product-options__item" v-if="hasSize">
@@ -18,7 +19,7 @@
               ><div><span class="size-options">{{ hasSizeOptions }}</span></div>
             </div>
              <div class="v-flex product-options__item" v-if="hasColor">
-              <span v-if="hasSize">Available colors: </span >
+              <span v-if="hasSize">choose from available colors: </span >
               <div>
                 <div @click="chooseImage(index)" class="color-box" v-for="(item,index) in singleProduct.colors" :style="{background:item.chroma.color}" :key="index">
                   <span>{{item.chroma_name}}</span>
@@ -39,7 +40,7 @@
             :data-item-id="singleProduct.title"
             :data-item-price="finalPrice"
             :data-item-url="singleProduct.url"
-            :data-item-name="singleProduct.title"
+            :data-item-name="singleProduct.title + chromaName"
             :data-item-image="mainSrc"
             :data-item-description="singleProduct.desc"
             :data-item-custom1-name="hasSize ? 'Size' : false"
@@ -70,7 +71,9 @@
 export default {
   data(){
     return{
-      src:''
+      src:'',
+      isOpen:false,
+      nameofChroma:''
     }
   },
   asyncData(context) {
@@ -107,7 +110,6 @@ export default {
     singleProduct() {
       return this.products.find((e) => e.slug === this.$route.params.id);
     },
-   
     hasColor(){
       return this.singleProduct.colors.length
     },
@@ -147,12 +149,23 @@ export default {
         : this.singleProduct.price;
     },
     mainSrc(){
-      return this.src.length?this.src:this.singleProduct.imgs[0].filename
+       return (this.src.length?this.src:this.singleProduct.imgs[0].filename)
+    },
+    repMainSrc(){
+      //replace string to call smaller size img
+      return this.mainSrc.replace( "https://a.storyblok.com","https://img2.storyblok.com/400x0")
+    },
+    chromaName(){
+      if (this.singleProduct.colors.length){
+      return ' - ' + this.nameofChroma.length?this.nameofChroma:this.singleProduct.colors[0].chroma_name
+      }else return ""
     }
+
   },
   methods:{
     chooseImage(index){
        this.src = this.singleProduct.imgs[index].filename
+       this.nameofChroma = this.singleProduct.colors[index].chroma_name
       console.log('fired'+index)
     }
   },
@@ -164,22 +177,35 @@ export default {
 
 <style>
 .product {
-  max-width: 80%;
+  max-width: 90%;
   margin: auto;
   display: flex;
   justify-content: center;
-  padding: 4rem;
+  flex-wrap: wrap;
+  padding: 2rem;
 }
 .product > * {
-  margin: 1rem;
-  flex: 1;
+  margin: 0.5rem;
 }
+.zoom-image{
+  width: 100%;
+  position: fixed;
+  top:0;
+  z-index: 1;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.358);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-behavior: unset;
+  cursor: zoom-out;
+  margin: 0;
+  overflow-y: hidden;
+}
+
 .product .images {
-  /* border: 1px solid var(--sec-text-color); */
-  
-  padding: 1rem;
-  border-radius: 10px;
-  max-width: 300px;
+  cursor: zoom-in;
+  /* flex-basis: 38%; */
 }
 .thumbs img{
   width:80px;
@@ -189,8 +215,10 @@ export default {
 }
 .product-details {
   display: flex;
+  flex:1;
   flex-direction: column;
   justify-content: space-between;
+  padding: 0 1em ;
 }
 .product-details h1{
   text-align: left;
@@ -256,9 +284,7 @@ export default {
   cursor: pointer;
 }
 .color-box:hover{
-  
   box-shadow:  0px 5px 7px 0 rgb(172, 172, 172);
-  
 }
 .color-box span{
   position: absolute;
@@ -274,6 +300,6 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 </style>

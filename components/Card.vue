@@ -1,7 +1,6 @@
 <template>
   <article>
     <div class="card-container">
-     
       <div class="card__image">
            <div v-if="isFeatured" class="ribon featured">featured</div>
            <!-- <div v-if="sales" class="ribon sales">sales</div> -->
@@ -18,6 +17,7 @@
       </nuxt-link>
       <div class="card__details">
         <p class="prod-descr">{{ desc }}</p>
+        <nuxt-link :to="routeLink"><div class="viewmore">view options</div></nuxt-link>
         <div>
           <span class="prod-price" :class="{ strikeline: sales }">{{
             addcurrency
@@ -254,8 +254,14 @@ export default {
 }
 .prod-descr {
   min-height: 80px;
-  margin: 0em 0 1em;
+  /* margin: 0em 0 1em; */
   padding: 0 0.5em 1em;
+}
+.viewmore{
+  padding: 0em 0 1em;
+  font-weight: bold;
+  font-size: 0.9em;
+  letter-spacing: 1px;
 }
 .prod-disprice {
   position: absolute;
