@@ -13,7 +13,9 @@
     <Hero />
    <div class="container">
       <nuxt/></div>
-<div id="snipcart"  data-currency="eur" data-config-modal-style="side" data-api-key="NmZmYmY2NDgtMGFmOC00NmYwLWE2YzQtZGNiYTY0NjRlYTUxNjM3NDE4MTkyODk2MzAyOTA4" hidden></div>
+    <div id="snipcart"  data-currency="eur" data-config-modal-style="side"    data-api-key="NmZmYmY2NDgtMGFmOC00NmYwLWE2YzQtZGNiYTY0NjRlYTUxNjM3NDE4MTkyODk2MzAyOTA4" hidden>
+           
+    </div>
      <Footer />
 
   </div>
@@ -189,24 +191,27 @@ img{
   }.snipcart__icon--blue-light path,.snipcart__icon--blue-dark path{
     fill: var(--main-accent-color);
   }
-  .snipcart-form__select:focus {
+  .snipcart-form__select:focus-within {
     outline: none;
-    border: 1px solid var(--sec-accent-color)  ;
-}
-.snipcart-input:focus-within {
-    outline: none;
-    border: 1px solid var(--sec-accent-color);
+    border: 1px solid var(--sec-accent-color) !important;
     box-shadow: 0 8px 14px 0 #dee0e0;
 }
-.snipcart-form__address-autocomplete>div:focus{
+.snipcart-input:focus-within{
     outline: none;
-    border: 1px solid var(--sec-accent-color);
+    border: 1px solid var(--sec-accent-color) !important;
     box-shadow: 0 8px 14px 0 #dee0e0;
-    
 }
+.snipcart-checkbox:focus+label:before, .snipcart-checkbox:hover+label:before {
+    border: 1px solid var(--sec-accent-color);
+}
+
 .snipcart__button--icon:active, .snipcart__button--icon:focus {
     outline: none;
     border: 1px solid var(--sec-accent-color);
+}
+.snipcart-cart__content {
+    margin: 0 auto;
+    background-color: transparent;
 }
    
 

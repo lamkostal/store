@@ -40,7 +40,7 @@
             :data-item-id="singleProduct.title"
             :data-item-price="finalPrice"
             :data-item-url="singleProduct.url"
-            :data-item-name="singleProduct.title + chromaName"
+            :data-item-name="singleProduct.title +' '+ chromaName"
             :data-item-image="mainSrc"
             :data-item-description="singleProduct.desc"
             :data-item-custom1-name="hasSize ? 'Size' : false"
@@ -64,11 +64,16 @@
         </div>
       </div>
     </article>
+    <Carousel :priceIn='singleProduct.price' :categIn='singleProduct.incat' :mytitle='singleProduct.title' />
   </main>
 </template>
 
 <script>
+import Carousel from '../../../components/Carousel.vue'
 export default {
+  components:{
+    Carousel
+    },
   data(){
     return{
       src:'',
@@ -92,7 +97,6 @@ export default {
               price: pr.content.price,
               imgs: pr.content.images,
               incat: pr.content.incategory,
-              catlist: pr.tag_list,
               full_slug: pr.full_slug,
               slug: pr.slug,
               size: pr.content.size,
@@ -157,7 +161,8 @@ export default {
     },
     chromaName(){
       if (this.singleProduct.colors.length){
-      return ' - ' + this.nameofChroma.length?this.nameofChroma:this.singleProduct.colors[0].chroma_name
+        let str=' '+'-'+' '
+      return str.concat(this.nameofChroma.length?this.nameofChroma:this.singleProduct.colors[0].chroma_name)
       }else return ""
     }
 
