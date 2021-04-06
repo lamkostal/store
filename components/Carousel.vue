@@ -86,13 +86,14 @@ export default {
     
     }
     section h3{
-        border-top: 1px dashed var(--sec-text-color);
+        border-top: 1px dashed var(--light-grey);
         margin: auto;
-        margin-top: 2em;
+        margin-top: 1.2em;
         color:var(--sec-text-color);
-        padding: 2em 0 1em;
-        font-size: 2em;
+        padding: 1.2em 0 0.5em;
+        font-size: 2.5em;
         width:80vw;
+        font-weight: lighter;
     }
     .slides-list{
         flex: 0;
@@ -107,7 +108,7 @@ export default {
     .slides-list li {
         flex:1;
         /* flex-basis:45%;  */
-        border:var(--sec-text-color) 1px solid;
+        border:var(--light-grey) 1px solid;
         height:300px;
         margin: 0.4em;
         padding: 0.8em;

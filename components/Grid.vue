@@ -16,6 +16,7 @@
                     :sales="product.sales"
                     :discount="product.discount"
                     :featured="product.featured"
+                    :colors="product.colors"
                    
                     />
      

@@ -12,12 +12,12 @@
       </div>
       <nuxt-link :to="routeLink">
         <div class="card__title">
-          <h3>{{ title }}</h3>
+          <h3>{{ title }}<span>{{defaultColor}}</span></h3>
         </div>
       </nuxt-link>
       <div class="card__details">
         <p class="prod-descr">{{ desc }}</p>
-        <nuxt-link :to="routeLink"><div class="viewmore">view options</div></nuxt-link>
+        <nuxt-link :to="routeLink"><div class="viewmore">view more</div></nuxt-link>
         <div>
           <span class="prod-price" :class="{ strikeline: sales }">{{
             addcurrency
@@ -27,10 +27,10 @@
           <button
             class="icon cart-icon buy-button snipcart-add-item"
             title="add to cart"
-            :data-item-id="title"
+            :data-item-id="title + defaultColor"
             :data-item-price="finalPrice"
             :data-item-url="url"
-            :data-item-name="title"
+            :data-item-name="title+ defaultColor"
             :data-item-image="imgsrc"
             :data-item-description="desc"
             :data-item-custom1-name="hasSize ? 'Size' : false"
@@ -48,7 +48,7 @@
               />
             </svg>
           </button>
-          <div class="button-pop">add to cart</div>
+          <div class="button-pop">quick add</div>
         </div>
       </div>
     </div>
@@ -71,6 +71,7 @@ export default {
     "sales",
     "discount",
     "featured",
+    'colors'
   ],
   data() {
     return {
@@ -79,6 +80,9 @@ export default {
     };
   },
   computed: {
+    defaultColor(){
+      return this.colors.length?  '  '+'(' +this.colors[0].chroma_name +')' :''
+      },
     cardThumb() {
       return this.imgsrc.replace(
         "https://a.storyblok.com",
@@ -142,6 +146,10 @@ export default {
   margin: 10px 0 0 0;
   font-size: 1.1em;
   color: var(--main-text-color);
+}
+.card__title span{
+  color:var(--sec-text-color);
+  font-size: 0.7em;
 }
 .card__title:hover {
   margin: 10px 0 0 0;
@@ -258,10 +266,19 @@ export default {
   padding: 0 0.5em 1em;
 }
 .viewmore{
-  padding: 0em 0 1em;
+  width: 40%;
+  padding: 0.6em 0.4em;
   font-weight: bold;
   font-size: 0.9em;
   letter-spacing: 1px;
+  border: 1px solid var(--main-accent-color);
+  margin: auto;
+  margin-bottom: 1em;
+  transition: all 0.2s ease;
+}
+.viewmore:hover{
+  background: var(--main-accent-color);
+  color:#fff;
 }
 .prod-disprice {
   position: absolute;

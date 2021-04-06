@@ -41,6 +41,7 @@ export default {
               size:pr.content.size,
               sales:pr.content.sales,
               discount:pr.content.discount,
+              colors:pr.content.colors,
               featured:pr.content.featured
             };
           }),

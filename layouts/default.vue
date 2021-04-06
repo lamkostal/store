@@ -70,12 +70,14 @@ html {
   /* position: relative; */
 }
 body{
+  
+  --light-grey:rgb(196, 196, 196);
   --danger-color:rgb(243, 55, 8);
   --main-accent-color:rgb(17, 155, 109);
   --sec-accent-color: rgb(144, 231, 144);
   --main-bgcolor:#f2f2f2;
   --main-text-color:rgb(44, 44, 44);
-  --sec-text-color:rgb(100, 99, 99);
+  --sec-text-color:rgb(114, 114, 114);
   background: var(--main-bgcolor);
   color:var(--main-text-color);
   overflow: visible;

@@ -119,9 +119,10 @@ export default {
   padding: 0;
 }
 .cat-list a {
-  color: var(--main-text-color);
+  color: var(--sec-text-color);
   text-decoration: none;
   font-size: 1.1em;
+  text-transform: uppercase;
 }
 .cat-list a:hover,
 .cat-list a:focus {

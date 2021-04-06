@@ -12,6 +12,9 @@
         <div>
           <h1>{{ singleProduct.title }} {{chromaName}}</h1>
           <p>{{ singleProduct.desc }}</p>
+          <p v-if="!singleProduct.noStock" class="info">in stock</p>
+          <p v-else class="danger">out of stock</p>
+
           <div class="product-options">
             <div class="h-flex product-options__item" v-if="hasSize">
               <span >Available sizes:
@@ -35,7 +38,8 @@
           <span class="price salesprice" v-if="singleProduct.sales"
             >€{{ finalPrice }}</span
           >
-          <button
+          <button :disabled='singleProduct.noStock'
+            type="button"
             class="btn buy-button snipcart-add-item"
             :data-item-id="singleProduct.title"
             :data-item-price="finalPrice"
@@ -45,11 +49,13 @@
             :data-item-description="singleProduct.desc"
             :data-item-custom1-name="hasSize ? 'Size' : false"
             :data-item-custom1-options="hasSize ? hasSizeOptions : false"
-           
-            
+            data-item-has-taxes-included=true
           >
-            <span>Add to cart</span>
+            <span v-if="!singleProduct.noStock">Add to cart</span>
+            <span v-else  @click.stop="">currently out of stock</span>
+
             <svg
+              v-if="!singleProduct.noStock"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -76,6 +82,7 @@ export default {
     },
   data(){
     return{
+      inStock:true,
       src:'',
       isOpen:false,
       nameofChroma:''
@@ -103,6 +110,7 @@ export default {
               sales: pr.content.sales,
               discount: pr.content.discount,
               colors: pr.content.colors,
+              noStock:pr.content.nostock
               
             };
           }),
@@ -175,7 +183,7 @@ export default {
     }
   },
   mounted(){
-    console.log(this.ColorOptions)
+    console.log("nostock:"+this.singleProduct.noStock)
   }
 };
 </script>
@@ -192,13 +200,27 @@ export default {
 .product > * {
   margin: 0.5rem;
 }
+.info{
+  text-transform: uppercase;
+  color: var(--main-accent-color);
+  font-size: 0.9em;
+  font-weight: bold;
+  letter-spacing: 0.2px;
+}
+.danger{
+  text-transform: uppercase;
+  color: var(--danger-color);
+  font-size: 0.9em;
+  font-weight: bold;
+  letter-spacing: 0.2px;
+}
 .zoom-image{
   width: 100%;
   position: fixed;
   top:0;
   z-index: 1;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.358);
+  background: rgba(0, 0, 0, 0.658);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -207,7 +229,9 @@ export default {
   margin: 0;
   overflow-y: hidden;
 }
-
+.zoom-image img{
+  border-radius: 5%;
+}
 .product .images {
   cursor: zoom-in;
   /* flex-basis: 38%; */
