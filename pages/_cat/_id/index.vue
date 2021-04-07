@@ -77,6 +77,8 @@
 <script>
 import Carousel from '../../../components/Carousel.vue'
 export default {
+  transition: 'fade',
+
   components:{
     Carousel
     },

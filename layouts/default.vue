@@ -90,7 +90,7 @@ body{
   align-items: flex-start;
   text-align: center;
   max-width: 1360px;
-  margin: 20px auto;
+  margin: 40px auto 80px;
 
 }
 button{

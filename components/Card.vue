@@ -1,5 +1,6 @@
 <template>
-  <article>
+
+   <article>
     <div class="card-container">
       <div class="card__image">
            <div v-if="isFeatured" class="ribon featured">featured</div>
@@ -53,6 +54,8 @@
       </div>
     </div>
   </article>
+
+ 
 </template>
 
 <script>

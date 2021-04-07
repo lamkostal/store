@@ -3,7 +3,15 @@
       <div class="headers">
         <h2 class="subtitle">{{$route.params.cat}}</h2>
       </div>
-      <Grid :products="products" />
+      <div class="sorting-field">
+          <label for="sort-products">sort products by price:</label>
+          <select name="ascending" id="sort-products" v-model="sortSetter">
+            <option>ascending</option>
+            <option>descending</option>
+          </select>
+        </div>
+
+      <Grid :products="sortedProducts" />
 
   </main>
 </template>
@@ -17,6 +25,11 @@ export default {
    
   components: {
     Grid
+  },
+  data(){
+      return{
+        sortSetter:'ascending'
+      }
   },
    asyncData(context) {
     return context.app.$storyapi
@@ -54,6 +67,21 @@ export default {
           }
           );
   },
+  computed:{
+
+    sortedProducts(){
+      if(this.sortSetter==='ascending'){
+         return this.products.sort((a,b)=>{
+        return a.price-b.price
+      })
+      }else{
+         return this.products.sort((a,b)=>{
+        return b.price-a.price
+      })
+      }
+     
+    }
+  }
   
 }
 </script>
@@ -67,6 +95,16 @@ main{
 .headers{
   margin:20px 0 50px;
 
+}
+.sorting-field{
+  display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin:0em 3em 2em;
+}
+select{
+  padding: 1em;
+  margin-left: 1em;
 }
 
 .title {
