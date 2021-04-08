@@ -3,7 +3,9 @@
 
   <div class="grid">
     
-                   <Card  v-for="product in products" :key="product.title"  
+                  <Card 
+             
+                    v-for="product in products" :key="product.title"  
                     :title="product.title"
                     :desc="product.desc"
                     :price="product.price"

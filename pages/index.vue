@@ -1,5 +1,6 @@
 <template>
   <main>
+      <Homehero/>
       <div class="headers">
         <h2 class="subtitle">featured products</h2>
       </div>
@@ -10,12 +11,14 @@
 
 <script>
 import Grid from '../components/Grid.vue'
+import Homehero from '../components/Homehero.vue'
 
 
 export default {
   transition: 'fade',
    
   components: {
+    Homehero,
     Grid
   },
   data(){

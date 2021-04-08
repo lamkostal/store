@@ -1,6 +1,11 @@
 const pkg = require('./package')
 
 module.exports = {
+  buildModules: ['nuxt-gsap-module'],
+
+  gsap: {
+    /* module options */
+  },
   mode: 'universal',
 
   /*
@@ -49,6 +54,7 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    
     ['storyblok-nuxt',{ accessToken: process.env.NODE_ENV == 'production' ? 
 'YWHEVryFmuLD6ROEZs0rzgtt':'vMmPeTfcoklC2N5BaP4Bbwtt' , cacheProvider : 
 'memory'}],

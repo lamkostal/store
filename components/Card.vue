@@ -1,8 +1,8 @@
 <template>
 
    <article>
-    <div class="card-container">
-      <div class="card__image">
+    <div class="card-container" >
+      <div class="card__image" >
            <div v-if="isFeatured" class="ribon featured">featured</div>
            <!-- <div v-if="sales" class="ribon sales">sales</div> -->
 
@@ -129,6 +129,13 @@ export default {
     // console.log("slug:" + this.slug);
     // console.log("size:" + this.size);
     // console.log("name:" + this.title + " sizeoptions:" + this.hasSizeOptions);
+    var gsap = this.$gsap
+    gsap.fromTo('.card-container',{
+      y:100,
+      opacity:0
+    },{y:0,
+    opacity:1,
+     stagger:0.1 })
   },
 };
 </script>

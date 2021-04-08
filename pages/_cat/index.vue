@@ -1,10 +1,11 @@
 <template>
   <main>
+    
       <div class="headers">
         <h2 class="subtitle">{{$route.params.cat}}</h2>
       </div>
       <div class="sorting-field">
-          <label for="sort-products">sort products by price:</label>
+          <label for="sort-products">price:</label>
           <select name="ascending" id="sort-products" v-model="sortSetter">
             <option>ascending</option>
             <option>descending</option>
@@ -20,11 +21,14 @@
 import Grid from '../../components/Grid.vue'
 
 
+
 export default {
   transition: 'fade',
    
   components: {
-    Grid
+   
+    Grid,
+    
   },
   data(){
       return{
@@ -100,11 +104,34 @@ main{
   display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin:0em 3em 2em;
+    margin:0em 4em 2em;
+  color: var(--sec-text-color);
+    
+
 }
 select{
-  padding: 1em;
-  margin-left: 1em;
+  width: 90px;
+  padding: 0.7em 1.5em;
+  margin-left: 0.5em;
+  border: 1px solid var(--sec-text-color);
+  color: var(--sec-text-color);
+  box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+	max-width: 100%;
+	box-sizing: content-box;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: #fff;
+	background-image: url('@/static/chevron.svg'),
+	  linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+	background-repeat: no-repeat, repeat;
+	background-position: right .7em top 50%, 0 0;
+	background-size: 1.5em auto, 100%;
+  font-size: 0.9em;
+}
+select:focus {
+	color: var(--main-text-color);
+	/* outline: none; */
 }
 
 .title {
