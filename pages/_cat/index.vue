@@ -1,9 +1,9 @@
 <template>
   <main>
     
-      <div class="headers">
-        <h2 class="subtitle">{{$route.params.cat}}</h2>
-      </div>
+      <!-- <div class="headers"> -->
+        <!-- <h2 class="subtitle">{{$route.params.cat}}</h2> -->
+      <!-- </div> -->
       <div class="sorting-field">
           <label for="sort-products">price:</label>
           <select name="ascending" id="sort-products" v-model="sortSetter">

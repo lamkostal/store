@@ -1,6 +1,7 @@
 <template>
   <div class="hero-container">
-    <h1 class="title">lamstore <br> shop t-shirts and other apparel</h1>
+    <h1 class="title" v-gsap.from="{x:20,opacity:0.3,duration:0.5}">
+     <slot> lamstore </slot><br> </h1>
   </div>
 </template>
 
@@ -12,7 +13,7 @@ export default {
 
 <style>
 .hero-container{
-    height: 25vh;
+    height: 20vh;
     background: url(@/static/wiggle.svg) ,linear-gradient(15deg, var(--sec-accent-color), var(--main-accent-color)) ;
     display:flex;
     justify-content: center;

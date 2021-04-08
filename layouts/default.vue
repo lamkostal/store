@@ -10,7 +10,7 @@
     </transition>
     <Head />
     <Nav /> 
-    <Hero />
+    <Hero >{{pageName}}</Hero>
    <div class="container">
       <nuxt/></div>
     <div id="snipcart"  data-currency="eur" data-config-modal-style="side"    data-api-key="NmZmYmY2NDgtMGFmOC00NmYwLWE2YzQtZGNiYTY0NjRlYTUxNjM3NDE4MTkyODk2MzAyOTA4" hidden>
@@ -42,6 +42,11 @@ export default {
   methods:{
     close(){
       this.isClosed=true
+    }
+  },
+  computed:{
+    pageName(){
+      return this.$route.path==='/'?'Lamstor - shop t-shirts and other apparel':this.$route.params.id?this.$route.params.id:this.$route.params.cat
     }
   }
 }
