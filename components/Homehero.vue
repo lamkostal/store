@@ -2,7 +2,13 @@
   <section class="homehero">
     <div>
       <svg class="herosvg" viewBox="0 0 160 110">
-       
+
+      <image  x="10"  y="0"   width="5"  height="5"  href="/heroimgs/circle.svg" />
+      <image  x="40"  y="100"   width="5"  height="5"  href="/heroimgs/circle.svg" />
+      <image  x="90"  y="10"   width="5"  height="5"  href="/heroimgs/circle.svg" />
+      <image  x="100"  y="50"   width="5"  height="5"  href="/heroimgs/circle.svg" />
+      <image  x="140"  y="80"   width="5"  height="5"  href="/heroimgs/circle.svg" />
+
 
        <defs>
             <clipPath id="blue-clip">
@@ -37,7 +43,7 @@
           height="50"
           href="/heroimgs/bas.png"
        />
-          <text x='120' y='45' font-size="0.5em">Baseball-t's</text>
+          <text x='105' y='60' >Baseball-t's</text>
 
  </nuxt-link>
        
@@ -51,7 +57,7 @@
           height="35"
           href="/heroimgs/cup.png"
         />
-          <text x='8' y='14' font-size="0.5em">Cups</text>
+          <text x='8' y='14' >Cups</text>
 
         </nuxt-link>
 
@@ -65,7 +71,7 @@
             height="50"
             href="/heroimgs/hoodie.jpg"
           />
-          <text x='1' y='100' font-size="0.5em">Hoodies</text>
+          <text x='1' y='100' >Hoodies</text>
 
         </nuxt-link>
        <nuxt-link to="/masks">
@@ -78,7 +84,7 @@
             height="35"
             href="/heroimgs/mask.jpeg"
           />
-          <text x='125' y='95' font-size="0.5em">Masks</text>
+          <text x='125' y='95' >Masks</text>
 
        </nuxt-link>
        <nuxt-link to="/tshirts">
@@ -91,7 +97,7 @@
             height="40"
             href="/heroimgs/tee.jpg"
           />
-          <text x='60' y='17' font-size="0.5em">T-shirts</text>
+          <text x='60' y='17'>T-shirts</text>
 
        </nuxt-link>
         
@@ -116,7 +122,7 @@ export default {
             transformOrigin:'50% 50%',
             scale:0,
             duration:1,
-            stagger:0.1,
+            stagger:0.2,
             ease:'power3.out',
             x:10
         })
@@ -124,15 +130,21 @@ export default {
             transformOrigin:'50% 50%',
             scale:0,
             duration:1,
-            rotation:10,
+            rotation:0,
             ease:'power3.out',
-            stagger:0.1,
-        },{scale:1,opacity:1},'<0.1')
+        },{
+          scale:1,
+          rotation:365,
+          opacity:1,
+            stagger:0.2,
+
+          },'<0.1')
         .from('text',{
           scale:0,
           transformOrigin:'50% 50%',
-          stagger:0.2
-
+          stagger:0.1,
+          duration:1,
+          ease:'power3.out',
           })
         }
     }
@@ -143,22 +155,36 @@ export default {
 .herosvg{
     opacity:0;
     margin: 1em 0;
+    overflow: vidible;
 }
 text{
   fill:var(--sec-text-color);
+  font-size:0.3em
 }
 text:hover{
-  fill:var(--main-text-color);
+  fill:var(--main-accent-color);
 }
 
 .homehero {
-  max-width: 60%;
+  max-width: 75%;
   margin: auto;
 }
+@media  (max-width:770px) {
+  .homehero {
+  max-width: 95%;
+  margin: auto;
+}
+text{
+  font-size:0.5em
+}
+}
+
 .homehero div {
   /* background: coral; */
   display: flex;
   justify-content: center;
+    overflow: vidible;
+
 }
 .clip{
     background: #000;
