@@ -20,7 +20,7 @@
               <li v-for="cat in categories" :key="cat.title">
                 <nuxt-link :to="'/'+cat.title" >{{ cat.title }}</nuxt-link>
               </li>
-              <li class="sales_link"> <nuxt-link to="/sales" >sales</nuxt-link></li>
+              <li class="sales_link" v-gsap.to="{opacity:1,delay:0.8}"> <nuxt-link to="/sales" >sales</nuxt-link></li>
             </ul>
           </nav>
          
@@ -100,7 +100,7 @@ export default {
      top:0;
      background:var(--main-bgcolor);
      z-index: 1;
-     border-bottom: 1px solid var(--main-accent-color);
+     border-bottom: 1px solid var(--main-color);
      padding: 10px 20px;
     
  }
@@ -127,7 +127,10 @@ export default {
 }
 .cat-list a:hover,
 .cat-list a:focus {
-  color: var(--main-accent-color);
+  color: var(--main-color);
+}
+.sales_link{
+  opacity: 0;
 }
 .sales_link a{
   color:var(--danger-color) ;
@@ -153,7 +156,7 @@ export default {
   cursor: pointer;
 }
 .cart path {
-  fill: var(--main-accent-color);
+  fill: var(--main-color);
 }
 .cart span{
   margin: 0 5px;

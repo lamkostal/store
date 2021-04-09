@@ -78,8 +78,9 @@ body{
   
   --light-grey:rgb(196, 196, 196);
   --danger-color:rgb(243, 55, 8);
-  --main-accent-color:rgb(17, 155, 109);
-  --sec-accent-color: rgb(144, 231, 144);
+  --main-color:rgb(17, 155, 109);
+  --sec-color: rgb(144, 231, 144);
+  --accent-color:rgb(199, 144, 231);
   --main-bgcolor:#f2f2f2;
   --main-text-color:rgb(44, 44, 44);
   --sec-text-color:rgb(114, 114, 114);
@@ -102,9 +103,9 @@ button{
     background: transparent;
 }
 button:visited{
- outline-color:var(--main-accent-color) ;
+ outline-color:var(--main-color) ;
 }
-:focus{outline-color:var(--main-accent-color) ;}
+:focus{outline-color:var(--main-color) ;}
 button:focus{
   
   outline-offset: 3px;
@@ -112,7 +113,7 @@ button:focus{
   outline-width: 1px;
 }
 a{
-  color:var(--main-accent-color);
+  color:var(--main-color);
   text-decoration: none;
 }
 
@@ -139,7 +140,7 @@ img{
   right: 25px;
   border-radius:50% ;
   background: rgba(253, 245, 230, 0.575);
-  color: var(--main-accent-color);
+  color: var(--main-color);
 }
 .close:hover{
   cursor: pointer;
@@ -152,11 +153,11 @@ img{
   background: #fff;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--sec-accent-color);
+  background: var(--sec-color);
   border-radius: 20px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--main-accent-color);
+  background: var(--main-color);
 }
 
 /* //transitions// */
@@ -165,7 +166,7 @@ img{
 .snipcart-cart-button{
     transition: all .4s;
 
-  background:linear-gradient(0deg,var(--main-accent-color),var(--sec-accent-color));
+  background:linear-gradient(0deg,var(--main-color),var(--sec-color));
   background-size:100px 80px;  
   /* background-size: cover; */
  
@@ -175,7 +176,7 @@ img{
 /* overide snipcart styles */
 
   .snipcart-cart-button:hover{
-  /* background:linear-gradient(10deg,var(--sec-accent-color),var(--main-accent-color)); */
+  /* background:linear-gradient(10deg,var(--sec-color),var(--main-color)); */
   background-position:100px;
   }
   .snipcart-cart-button--secondary {
@@ -183,38 +184,38 @@ img{
    
 }
 .snipcart-cart-button--secondary .snipcart__icon path{
-    fill:var(--main-accent-color) !important
+    fill:var(--main-color) !important
   }
   .snipcart__box--badge-highlight{
     background: linear-gradient(
-90deg,var(--sec-accent-color),var(--main-accent-color));
+90deg,var(--sec-color),var(--main-color));
   }
   .snipcart__actions--link{
-    color: var(--main-accent-color);
+    color: var(--main-color);
   }
   .snipcart-cart-header,.snipcart-cart__secondary-header,.snipcart-modal{
     background: var(--main-bgcolor);
     
   }.snipcart__icon--blue-light path,.snipcart__icon--blue-dark path{
-    fill: var(--main-accent-color);
+    fill: var(--main-color);
   }
   .snipcart-form__select:focus-within {
     outline: none;
-    border: 1px solid var(--sec-accent-color) !important;
+    border: 1px solid var(--sec-color) !important;
     box-shadow: 0 8px 14px 0 #dee0e0;
 }
 .snipcart-input:focus-within{
     outline: none;
-    border: 1px solid var(--sec-accent-color) !important;
+    border: 1px solid var(--sec-color) !important;
     box-shadow: 0 8px 14px 0 #dee0e0;
 }
 .snipcart-checkbox:focus+label:before, .snipcart-checkbox:hover+label:before {
-    border: 1px solid var(--sec-accent-color);
+    border: 1px solid var(--sec-color);
 }
 
 .snipcart__button--icon:active, .snipcart__button--icon:focus {
     outline: none;
-    border: 1px solid var(--sec-accent-color);
+    border: 1px solid var(--sec-color);
 }
 .snipcart-cart__content {
     margin: 0 auto;

@@ -14,7 +14,7 @@ export default {
 <style>
 .hero-container{
     height: 20vh;
-    background: url(@/static/wiggle.svg) ,linear-gradient(15deg, var(--sec-accent-color), var(--main-accent-color)) ;
+    background: url(@/static/wiggle.svg) ,linear-gradient(15deg, var(--sec-color), var(--main-color)) ;
     display:flex;
     justify-content: center;
     align-items: center;

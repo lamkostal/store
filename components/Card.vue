@@ -164,7 +164,7 @@ export default {
 .card__title:hover {
   margin: 10px 0 0 0;
   font-size: 1.1em;
-  color: var(--main-accent-color);
+  color: var(--main-color);
 }
 .discount-sticker {
   position: absolute;
@@ -213,7 +213,7 @@ export default {
   position: absolute;
   top: 10px;
   right: 65px;
-  background: var(--sec-accent-color);
+  background: var(--sec-color);
   height: 37px;
   padding: 06.5px 0 0 0px;
   color: var(--main-text-color);
@@ -227,12 +227,12 @@ export default {
 }
 
 .cart-icon:hover {
-  background: var(--sec-accent-color);
+  background: var(--sec-color);
   cursor: pointer;
 }
 .cart-icon:focus,
 .cart-icon:visited {
-  background: var(--main-accent-color);
+  background: var(--main-color);
   border: none;
   outline: none;
   transition: all 0.1s;
@@ -248,13 +248,13 @@ export default {
   top: 0px;
   height: auto;
   padding: 4px 7px;
-  color: var(--main-accent-color);
+  color: var(--main-color);
   text-transform: uppercase;
   z-index: 0;
   font-size: 0.7em;
   font-weight: bold;
   border-radius: 5px 0 5px 0;
-  border: 1px solid var(--main-accent-color);
+  border: 1px solid var(--main-color);
 }
 .sales {
   position: absolute;
@@ -281,13 +281,13 @@ export default {
   font-weight: bold;
   font-size: 0.9em;
   letter-spacing: 1px;
-  border: 1px solid var(--main-accent-color);
+  border: 1px solid var(--main-color);
   margin: auto;
   margin-bottom: 1em;
   transition: all 0.2s ease;
 }
 .viewmore:hover{
-  background: var(--main-accent-color);
+  background: var(--main-color);
   color:#fff;
 }
 .prod-disprice {
@@ -318,7 +318,7 @@ export default {
 }
 .strikeline {
   text-decoration: line-through;
-  /* color: var(--main-accent-color); */
+  /* color: var(--main-color); */
   text-decoration-color: var(--danger-color);
 }
 </style>

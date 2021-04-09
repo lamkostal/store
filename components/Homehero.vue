@@ -2,12 +2,13 @@
   <section class="homehero">
     <div>
       <svg class="herosvg" viewBox="0 0 160 110">
-
-      <image  x="10"  y="0"   width="5"  height="5"  href="/heroimgs/circle.svg" />
-      <image  x="40"  y="100"   width="5"  height="5"  href="/heroimgs/circle.svg" />
-      <image  x="90"  y="10"   width="5"  height="5"  href="/heroimgs/circle.svg" />
-      <image  x="100"  y="50"   width="5"  height="5"  href="/heroimgs/circle.svg" />
-      <image  x="140"  y="80"   width="5"  height="5"  href="/heroimgs/circle.svg" />
+      <image class="deco-icon" x="5"  y="0"   width="4"  height="4"  href="/heroimgs/play.svg" />
+      <image class="deco-icon" x="40"  y="100"   width="4"  height="4" href="/heroimgs/rect.svg" />
+      <image class="deco-icon" x="60"  y="65"   width="4"  height="4"  href="/heroimgs/label.svg" />
+      <image class="deco-icon" x="75"  y="85"   width="4"  height="4"  href="/heroimgs/happy.svg" />
+      <image class="deco-icon" x="90"  y="10"   width="4"  height="4"  href="/heroimgs/rect.svg" />
+      <image class="deco-icon" x="100"  y="55"   width="4"  height="4"  href="/heroimgs/play.svg" />
+      <image class="deco-icon" x="140"  y="80"   width="4"  height="4"  href="/heroimgs/circle.svg" />
 
 
        <defs>
@@ -28,11 +29,11 @@
             </clipPath>
        </defs>
 
-               <rect x="105" y="5" width="50" height="50" fill="var(--sec-accent-color)" class="color-rect"/>
-               <rect x="15" y="5" width="35" height="35" fill="var(--sec-accent-color)" class="color-rect"/>
-               <rect x="5" y="45" width="50" height="50" fill="var(--sec-accent-color)" class="color-rect"/>
-               <rect x="90" y="65" width="45" height="35" fill="var(--sec-accent-color)" class="color-rect"/>
-               <rect x="60" y="20" width="40" height="40" fill="var(--sec-accent-color)" class="color-rect"/>
+               <rect x="105" y="5" width="50" height="50" fill="var(--sec-color)" class="color-rect"/>
+               <rect x="15" y="5" width="35" height="35" fill="var(--sec-color)" class="color-rect"/>
+               <rect x="5" y="45" width="50" height="50" fill="var(--sec-color)" class="color-rect"/>
+               <rect x="90" y="65" width="45" height="35" fill="var(--sec-color)" class="color-rect"/>
+               <rect x="60" y="20" width="40" height="40" fill="var(--sec-color)" class="color-rect"/>
  <nuxt-link to="/baseball"> 
  <image
           clip-path="url(#blue-clip)"
@@ -57,7 +58,7 @@
           height="35"
           href="/heroimgs/cup.png"
         />
-          <text x='8' y='14' >Cups</text>
+          <text x='3' y='14' >Cups</text>
 
         </nuxt-link>
 
@@ -84,7 +85,7 @@
             height="35"
             href="/heroimgs/mask.jpeg"
           />
-          <text x='125' y='95' >Masks</text>
+          <text x='135' y='95' >Masks</text>
 
        </nuxt-link>
        <nuxt-link to="/tshirts">
@@ -146,12 +147,43 @@ export default {
           duration:1,
           ease:'power3.out',
           })
+        .fromTo('.deco-icon',{
+          scale:0,
+          duration:0.3,
+        },{
+          scale:1,
+          stagger:{each:0.1,from:'center'},
+          ease:'power3.out',
+          },'<0.2')
+        .to('.deco-icon',{
+          transformOrigin:'50% 50%',
+          // x:1,
+          y:4,
+          rotation:390,
+          duration:4.4,
+          repeat:-1,
+           yoyo:true,
+            ease: "none",
+          stagger:{
+            each:0.2,
+            from:'random',
+            ease: "none",
+           yoyo:true,
+            repeat: -1
+            }
+           
+            })
         }
+        
     }
 };
 </script>
 
 <style>
+@font-face {
+  font-family: 'KathyCox';
+  src: url('/KathyCox.otf');
+}
 .herosvg{
     opacity:0;
     margin: 1em 0;
@@ -159,10 +191,12 @@ export default {
 }
 text{
   fill:var(--sec-text-color);
-  font-size:0.3em
+  font-size:0.3em;
+  font-family: 'KathyCox';
+
 }
 text:hover{
-  fill:var(--main-accent-color);
+  fill:var(--main-color);
 }
 
 .homehero {
@@ -178,7 +212,6 @@ text{
   font-size:0.5em
 }
 }
-
 .homehero div {
   /* background: coral; */
   display: flex;

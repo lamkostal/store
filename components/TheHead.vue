@@ -137,7 +137,7 @@ export default {
   padding: 0;
 }
 .search button:hover{
-  color:var(--main-accent-color);
+  color:var(--main-color);
   cursor: pointer;
 }
 .search input{
