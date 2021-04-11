@@ -263,7 +263,7 @@ export default {
   width: 100%;
   border: none;
   padding: 1rem;
-  background: var(--sec-accent-color);
+  background: var(--sec-color);
   margin: 2em 0 0 0;
   cursor: pointer;
   font-weight: bold;
@@ -274,7 +274,7 @@ export default {
   justify-content: center;
 }
 .btn:hover {
-  background: var(--main-accent-color);
+  background: var(--main-color);
   color: #fff;
 }
 .btn svg {

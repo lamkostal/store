@@ -2,13 +2,15 @@
   <section class="homehero">
     <div>
       <svg class="herosvg" viewBox="0 0 160 110">
-      <image class="deco-icon" x="5"  y="0"   width="4"  height="4"  href="/heroimgs/play.svg" />
+      <image class="deco-icon" x="5"  y="6"   width="4"  height="4"  href="/heroimgs/play.svg" />
       <image class="deco-icon" x="40"  y="100"   width="4"  height="4" href="/heroimgs/rect.svg" />
       <image class="deco-icon" x="60"  y="65"   width="4"  height="4"  href="/heroimgs/label.svg" />
+      <image class="deco-icon" x="65"  y="5"   width="4"  height="4"  href="/heroimgs/human.svg" />
       <image class="deco-icon" x="75"  y="85"   width="4"  height="4"  href="/heroimgs/happy.svg" />
       <image class="deco-icon" x="90"  y="10"   width="4"  height="4"  href="/heroimgs/rect.svg" />
       <image class="deco-icon" x="100"  y="55"   width="4"  height="4"  href="/heroimgs/play.svg" />
       <image class="deco-icon" x="140"  y="80"   width="4"  height="4"  href="/heroimgs/circle.svg" />
+      <image class="deco-icon" x="150"  y="60"   width="4"  height="4"  href="/heroimgs/dino.svg" />
 
 
        <defs>
@@ -158,9 +160,9 @@ export default {
         .to('.deco-icon',{
           transformOrigin:'50% 50%',
           // x:1,
-          y:4,
-          rotation:390,
-          duration:4.4,
+          y:2,
+          rotation:590,
+          duration:8.4,
           repeat:-1,
            yoyo:true,
             ease: "none",
@@ -172,7 +174,7 @@ export default {
             repeat: -1
             }
            
-            })
+            },'<0.5')
         }
         
     }
@@ -190,8 +192,8 @@ export default {
     overflow: vidible;
 }
 text{
-  fill:var(--sec-text-color);
-  font-size:0.3em;
+  fill:var(--main-text-color);
+  font-size:0.35em;
   font-family: 'KathyCox';
 
 }

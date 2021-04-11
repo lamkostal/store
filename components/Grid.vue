@@ -1,28 +1,30 @@
 <template>
             
 
-  <div class="grid">
-    
-                  <Card 
-             
-                    v-for="product in products" :key="product.title"  
-                    :title="product.title"
-                    :desc="product.desc"
-                    :price="product.price"
-                    :imgsrc="product.imgsrc"
-                    :imgalt="product.imgalt"
-                    :catlist="product.catlist"
-                    :index="index"
-                    :full_slug="product.full_slug"
-                    :size="product.size"
-                    :sales="product.sales"
-                    :discount="product.discount"
-                    :featured="product.featured"
-                    :colors="product.colors"
-                   
-                    />
-    
-  </div>
+  
+      <div class="grid">
+        
+                      <Card 
+                 
+                        v-for="product in products" :key="product.title"  
+                        :title="product.title"
+                        :desc="product.desc"
+                        :price="product.price"
+                        :imgsrc="product.imgsrc"
+                        :imgalt="product.imgalt"
+                        :catlist="product.catlist"
+                        :index="index"
+                        :full_slug="product.full_slug"
+                        :size="product.size"
+                        :sales="product.sales"
+                        :discount="product.discount"
+                        :featured="product.featured"
+                        :colors="product.colors"
+                       
+                        />
+        
+      </div>
+ 
           
 
 </template>

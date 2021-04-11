@@ -46,7 +46,7 @@ export default {
   },
   computed:{
     pageName(){
-      return this.$route.path==='/'?'Lamstor - shop t-shirts and other apparel':this.$route.params.id?this.$route.params.id:this.$route.params.cat
+      return this.$route.path==='/'?'Lamstore - shop t-shirts and other apparel':this.$route.params.id?this.$route.params.id:this.$route.params.cat
     }
   }
 }
@@ -80,10 +80,11 @@ body{
   --danger-color:rgb(243, 55, 8);
   --main-color:rgb(17, 155, 109);
   --sec-color: rgb(144, 231, 144);
-  --accent-color:rgb(199, 144, 231);
+  --accent-color:rgb(55, 43, 85);
   --main-bgcolor:#f2f2f2;
   --main-text-color:rgb(44, 44, 44);
-  --sec-text-color:rgb(114, 114, 114);
+  --inv-text-color:rgb(211, 211, 211);
+  --sec-text-color:rgb(146, 146, 146);
   background: var(--main-bgcolor);
   color:var(--main-text-color);
   overflow: visible;
@@ -96,7 +97,7 @@ body{
   align-items: flex-start;
   text-align: center;
   max-width: 1360px;
-  margin: 40px auto 80px;
+  margin: 80px auto 80px;
 
 }
 button{

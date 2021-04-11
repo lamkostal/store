@@ -5,6 +5,8 @@
         <h2 class="subtitle">featured products</h2>
       </div>
       <Grid :products="products" index='true'/>
+      <Brands />
+
 
   </main>
 </template>
@@ -12,6 +14,8 @@
 <script>
 import Grid from '../components/Grid.vue'
 import Homehero from '../components/Homehero.vue'
+import Brands from '../components/Brands'
+
 
 
 export default {
@@ -19,7 +23,8 @@ export default {
    
   components: {
     Homehero,
-    Grid
+    Grid,
+    Brands
   },
   data(){
     return{
@@ -64,6 +69,9 @@ main{
   max-width: 100%;
   flex-grow: 1;
 }
+section{
+  padding:0 0em 3em;
+}
 
 .headers{
   margin:20px 0 50px;
@@ -82,8 +90,10 @@ main{
   font-weight: 100;
   font-size: 2.5em;
   word-spacing: 5px;
-  padding-bottom: 15px;
-  color: var(--sec-text-color);;
+  padding: 1em;
+  color: var(--sec-text-color);
+  border-top: 1px solid var(--light-grey) ;
+
 }
 
 .links {
