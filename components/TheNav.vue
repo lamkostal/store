@@ -131,6 +131,8 @@ export default {
 }
 .sales_link{
   opacity: 0;
+  font-family: 'Kathycox';
+  letter-spacing: 1px;
 }
 .sales_link a{
   color:var(--danger-color) ;

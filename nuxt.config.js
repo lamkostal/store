@@ -4,7 +4,14 @@ module.exports = {
   buildModules: ['nuxt-gsap-module'],
 
   gsap: {
-    /* module options */
+    extraPlugins: {
+      /**
+       * After activation, plugins are automatically
+       * registered and available globally
+       */
+      scrollTo: true,
+      scrollTrigger: true
+    },
   },
   mode: 'universal',
 

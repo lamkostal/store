@@ -16,6 +16,7 @@
     <div id="snipcart"  data-currency="eur" data-config-modal-style="side"    data-api-key="NmZmYmY2NDgtMGFmOC00NmYwLWE2YzQtZGNiYTY0NjRlYTUxNjM3NDE4MTkyODk2MzAyOTA4" hidden>
            
     </div>
+    <Iconsection />
      <Footer />
 
   </div>
@@ -24,11 +25,14 @@
 import Head from '../components/TheHead.vue'
 import Hero from '../components/TheHero.vue'
 import Nav from '../components/TheNav.vue'
+import Iconsection from '../components/Iconsection'
+
 import Footer from '../components/TheFooter.vue'
 export default {
 
 
   components:{
+    Iconsection,
     Head,
     Nav,
     Hero,
@@ -90,16 +94,7 @@ body{
   overflow: visible;
   
 }
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: center;
-  max-width: 1360px;
-  margin: 80px auto 80px;
 
-}
 button{
     background: transparent;
 }

@@ -6,6 +6,7 @@
       </div>
       <Grid :products="products" index='true'/>
       <Brands />
+      
 
 
   </main>
@@ -22,6 +23,7 @@ export default {
   transition: 'fade',
    
   components: {
+   
     Homehero,
     Grid,
     Brands
@@ -71,6 +73,16 @@ main{
 }
 section{
   padding:0 0em 3em;
+}
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  max-width: 1360px;
+  margin: 80px auto 0px;
+
 }
 
 .headers{

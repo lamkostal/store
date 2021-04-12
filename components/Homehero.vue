@@ -170,7 +170,7 @@ export default {
             each:0.2,
             from:'random',
             ease: "none",
-           yoyo:true,
+            yoyo:true,
             repeat: -1
             }
            
