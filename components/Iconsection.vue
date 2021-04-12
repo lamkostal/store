@@ -71,12 +71,14 @@ export default {
 }
 .iconsection_item{
     color:var(--sec-text-color);
-    font-size: 1.5em;
+    font-size: 1.2em;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     font-family: 'Kathycox';
+  font-family: 'Bugaki';
+
     margin: 1em;
 
     

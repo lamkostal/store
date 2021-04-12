@@ -186,6 +186,10 @@ export default {
   font-family: 'KathyCox';
   src: url('/KathyCox.otf');
 }
+@font-face {
+  font-family: 'Bugaki';
+  src: url('/Bugaki-Regular.otf');
+}
 .herosvg{
     opacity:0;
     margin: 1em 0;
@@ -195,6 +199,8 @@ text{
   fill:var(--main-text-color);
   font-size:0.35em;
   font-family: 'KathyCox';
+  font-family: 'Bugaki';
+
 
 }
 text:hover{
