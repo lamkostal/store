@@ -5,7 +5,6 @@
       <div class="grid">
         
                       <Card 
-                 
                         v-for="product in products" :key="product.title"  
                         :title="product.title"
                         :desc="product.desc"
@@ -20,7 +19,6 @@
                         :discount="product.discount"
                         :featured="product.featured"
                         :colors="product.colors"
-                       
                         />
         
       </div>

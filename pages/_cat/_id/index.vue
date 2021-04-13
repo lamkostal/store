@@ -10,7 +10,9 @@
       </div>
       <div class="product-details">
         <div>
-          <h1>{{ singleProduct.title }} {{chromaName}}</h1>
+           <h1>{{ singleProduct.title }} {{chromaName}}</h1>
+          <span class="info-span">SKU: {{singleProduct.sku}}</span>
+          
           <p>{{ singleProduct.desc }}</p>
           <p v-if="!singleProduct.noStock" class="info">in stock</p>
           <p v-else class="danger">out of stock</p>
@@ -25,7 +27,7 @@
               <span v-if="hasSize">choose from available colors: </span >
               <div>
                 <div @click="chooseImage(index)" class="color-box" v-for="(item,index) in singleProduct.colors" :style="{background:item.chroma.color}" :key="index">
-                  <span>{{item.chroma_name}}</span>
+                  <span class="info-span">{{item.chroma_name}}</span>
                 </div>
               </div>
             </div>
@@ -34,7 +36,7 @@
         <div>
           <span class="price" :class="{ strikeline: singleProduct.sales }"
             >€{{ singleProduct.price }}</span
-          >
+          ><br>
           <span class="price salesprice" v-if="singleProduct.sales"
             >€{{ finalPrice }}</span
           >
@@ -71,16 +73,20 @@
       </div>
     </article>
     <Carousel :priceIn='singleProduct.price' :categIn='singleProduct.incat' :mytitle='singleProduct.title' />
+    <Iconsection />
+
   </main>
 </template>
 
 <script>
+import Iconsection from '../../../components/Iconsection.vue'
 import Carousel from '../../../components/Carousel.vue'
 export default {
   transition: 'fade',
 
   components:{
-    Carousel
+    Carousel,
+    Iconsection
     },
   data(){
     return{
@@ -102,6 +108,7 @@ export default {
           products: res.data.stories.map((pr) => {
             return {
               title: pr.content.name,
+              sku:pr.content.sku,
               desc: pr.content.description,
               price: pr.content.price,
               imgs: pr.content.images,
@@ -204,15 +211,15 @@ export default {
 }
 .info{
   text-transform: uppercase;
-  color: var(--main-accent-color);
-  font-size: 0.9em;
+  color: var(--info-color);
+  font-size: 0.9rem;
   font-weight: bold;
   letter-spacing: 0.2px;
 }
 .danger{
   text-transform: uppercase;
   color: var(--danger-color);
-  font-size: 0.9em;
+  font-size: 0.9rem;
   font-weight: bold;
   letter-spacing: 0.2px;
 }
@@ -245,18 +252,25 @@ export default {
   margin: 0.2em;
 }
 .product-details {
+  
   display: flex;
   flex:1;
   flex-direction: column;
   justify-content: space-between;
+ 
   padding: 0 1em ;
 }
 .product-details h1{
-  text-align: left;
+  /* text-align: left; */
+  
 }
 .product-details p {
   margin: 2em 0;
   text-align: left;
+}
+.info-span{
+  color: var(--sec-text-color) ;
+  font-size: 0.85rem;
 }
 
 .product .btn {
@@ -281,7 +295,7 @@ export default {
   margin: 0 1em;
 }
 .product .price {
-  font-size: 2.5em;
+  font-size: 2rem;
 }
 .salesprice {
   color: var(--danger-color);
@@ -299,7 +313,7 @@ export default {
   
 }
 .size-options {
-  font-size: 1.1em;
+  font-size: 1.1rem;
   font-weight: bold;
   letter-spacing: 5px;
 }

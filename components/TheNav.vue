@@ -138,7 +138,7 @@ export default {
 }
 .sales_link a{
   color:var(--danger-color) ;
-  font-size: 1em;
+  font-size: 1rem;
 
 }
 .cart {

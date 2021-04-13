@@ -1,10 +1,12 @@
 <template>
   <main>
-      <div class="headers">
-        <h2 class="subtitle ">ON SALES!!</h2>
-      </div>
-      <Grid :products="products" index='true'/>
+      <div class="page-content">
+        <div class="headers">
+          <h2 v-gsap.from="{y:-100,ease:'bounce.out',duration:1}" class="sales-title">NOW ON SALES!!</h2>
+        </div>
+        <Grid :products="products" index='true'/>
 
+      </div >
   </main>
 </template>
 
@@ -56,34 +58,13 @@ export default {
 }
 </script>
 
-<style>
-main{
-  max-width: 100%;
-  flex-grow: 1;
+<style >
+
+.sales-title{
+  color: var(--danger-color);
+  font-family: 'Bugaki';
+  font-size: 2rem;
 }
 
-.headers{
-  margin:20px 0 50px;
-
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 400;
-  font-size: 2.7em;
-  letter-spacing: 1px;
-}
-.subtitle {
-  font-weight: 100;
-  font-size: 2.5em;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-  color: var(--sec-text-color);;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>
+

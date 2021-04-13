@@ -61,6 +61,7 @@
 <script>
 export default {
   props: [
+    
     "title",
     "desc",
     "price",
@@ -154,16 +155,16 @@ export default {
 }
 .card__title {
   margin: 10px 0 0 0;
-  font-size: 1.1em;
+  font-size: 1.1rem;
   color: var(--main-text-color);
 }
 .card__title span{
   color:var(--sec-text-color);
-  font-size: 0.7em;
+  font-size: 0.7rem;
 }
 .card__title:hover {
   margin: 10px 0 0 0;
-  font-size: 1.1em;
+  font-size: 1.1rem;
   color: var(--main-color);
 }
 .discount-sticker {
@@ -222,7 +223,7 @@ export default {
   overflow: hidden;
   white-space: nowrap;
   border-radius: 5px 0 0 0;
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: bold;
 }
 
@@ -251,7 +252,7 @@ export default {
   color: var(--main-color);
   text-transform: uppercase;
   z-index: 0;
-  font-size: 0.7em;
+  font-size: 0.7rem;
   font-weight: bold;
   border-radius: 5px 0 5px 0;
   border: 1px solid var(--main-color);
@@ -265,7 +266,7 @@ export default {
   background: var(--danger-color);
   color: #fff;
   z-index: 0;
-  font-size: 0.8em;
+  font-size: 0.8rem;
   font-weight: 300;
   border-radius: 0px 0px 0px 5px;
   z-index: 0;
@@ -279,7 +280,7 @@ export default {
   width: 40%;
   padding: 0.6em 0.4em;
   font-weight: bold;
-  font-size: 0.9em;
+  font-size: 0.9rem;
   letter-spacing: 1px;
   border: 1px solid var(--main-color);
   margin: auto;
@@ -296,7 +297,7 @@ export default {
   left: 17px;
   width: 70px;
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 1.1rem;
   transform: rotate(15deg);
   background-color: var(--danger-color);
   padding: 2px;

@@ -1,5 +1,6 @@
 <template>
-  <section class="iconsection">
+ 
+  <section class="iconsection" >
       <div class="iconsection_item">
           <span>Free Shipping</span>
           <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M2 4h14v4h4v2h-4v6h6v-4h2v6h-4v2h-4v-2H8v2H4v-2H0V4h2zm20 8h-2v-2h2v2zm-8-2V6H2v10h12v-6z" fill=""/> </svg>
@@ -15,19 +16,23 @@
           <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M19 2H5v2H3v14h7v-8H5V4h14v6h-5v8h3v2h-6v2h8v-4h2V4h-2V2zm-3 10h3v4h-3v-4zm-8 0v4H5v-4h3z" fill="currentColor"/> </svg>
       </div>
   </section>
+  
 </template>
 
 <script>
 export default {
     mounted() {
+    
     this.animateOnScroll()
   },
+  
   methods:{
       animateOnScroll(){
         let gsap=this.$gsap
         let tl = gsap.timeline({
               scrollTrigger:{
                   trigger: '.iconsection',
+                  toggleActions:'restart none none'
                 //  pin: true,
                 //  scrub: true,
                 //  markers: true
@@ -40,7 +45,6 @@ export default {
               stagger:0.2,
           })
          .to('.iconsection_item span',{
-                 color:'var(--sec-color)',
                   rotation:3,
                   yoyo:true,
                   delay:0.1,
@@ -52,6 +56,11 @@ export default {
                   }
           })
           .to('.iconsection_item span',{ rotation:0,duration:0.1})
+          .to('.iconsection_item path',{
+                 fill:'var(--sec-color)',
+                 duration:1.5,
+                 
+          })
              
       }
   }
@@ -66,12 +75,12 @@ export default {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    padding:3em 2em;
+    padding:4em 2em;
     margin-top: 2em;
 }
 .iconsection_item{
     color:var(--sec-text-color);
-    font-size: 1.2em;
+    font-size: 1.2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,7 +103,7 @@ export default {
     
 }
 .iconsection_item path{
-    fill:var(--sec-text-color)
+    fill:var(--main-color)
      
 }
 

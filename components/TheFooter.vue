@@ -52,7 +52,7 @@ export default {};
   width: 100%;
   text-align: center;
   color: var(--sec-text-color);
-  font-size: 0.75em;
+  font-size: 0.75rem;
   padding: 4em 0 1em;
 }
 
@@ -85,7 +85,7 @@ footer {
   color: var(--inv-text-color);
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 1.1rem;
 }
 
 .footer_col ul {

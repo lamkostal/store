@@ -31,11 +31,11 @@
             </clipPath>
        </defs>
 
-               <rect x="105" y="5" width="50" height="50" fill="var(--sec-color)" class="color-rect"/>
-               <rect x="15" y="5" width="35" height="35" fill="var(--sec-color)" class="color-rect"/>
-               <rect x="5" y="45" width="50" height="50" fill="var(--sec-color)" class="color-rect"/>
-               <rect x="90" y="65" width="45" height="35" fill="var(--sec-color)" class="color-rect"/>
-               <rect x="60" y="20" width="40" height="40" fill="var(--sec-color)" class="color-rect"/>
+               <rect x="105" y="5" width="50" height="50" fill="var(--accent-color)" class="color-rect"/>
+               <rect x="15" y="5" width="35" height="35" fill="var(--accent-color)" class="color-rect"/>
+               <rect x="5" y="45" width="50" height="50" fill="var(--accent-color)" class="color-rect"/>
+               <rect x="90" y="65" width="45" height="35" fill="var(--accent-color)" class="color-rect"/>
+               <rect x="60" y="20" width="40" height="40" fill="var(--accent-color)" class="color-rect"/>
  <nuxt-link to="/baseball"> 
  <image
           clip-path="url(#blue-clip)"

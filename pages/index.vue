@@ -6,9 +6,7 @@
       </div>
       <Grid :products="products" index='true'/>
       <Brands />
-      
-
-
+    <Iconsection />  
   </main>
 </template>
 
@@ -16,6 +14,8 @@
 import Grid from '../components/Grid.vue'
 import Homehero from '../components/Homehero.vue'
 import Brands from '../components/Brands'
+import Iconsection from '../components/Iconsection'
+
 
 
 
@@ -23,7 +23,7 @@ export default {
   transition: 'fade',
    
   components: {
-   
+   Iconsection,
     Homehero,
     Grid,
     Brands
@@ -100,7 +100,7 @@ section{
 }
 .subtitle {
   font-weight: 100;
-  font-size: 2.5em;
+  font-size: 2.5rem;
   word-spacing: 5px;
   padding: 1em;
   color: var(--sec-text-color);

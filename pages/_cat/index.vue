@@ -1,19 +1,21 @@
 <template>
   <main>
-    
-      <!-- <div class="headers"> -->
-        <!-- <h2 class="subtitle">{{$route.params.cat}}</h2> -->
-      <!-- </div> -->
-      <div class="sorting-field">
-          <label for="sort-products">price:</label>
-          <select name="ascending" id="sort-products" v-model="sortSetter">
-            <option>ascending</option>
-            <option>descending</option>
-          </select>
-        </div>
+  <div class='page-content'>
+      
+        <!-- <div class="headers"> -->
+          <!-- <h2 class="subtitle">{{$route.params.cat}}</h2> -->
+        <!-- </div> -->
+        <div class="sorting-field">
+            <label for="sort-products">price:</label>
+            <select name="ascending" id="sort-products" v-model="sortSetter">
+              <option>ascending</option>
+              <option>descending</option>
+            </select>
+          </div>
+  
+        <Grid :products="sortedProducts" />
 
-      <Grid :products="sortedProducts" />
-
+  </div > 
   </main>
 </template>
 
@@ -95,6 +97,9 @@ main{
   max-width: 100%;
   flex-grow: 1;
 }
+.page-content{
+  padding:0 0 5em;
+}
 
 .headers{
   margin:20px 0 50px;
@@ -127,7 +132,7 @@ select{
 	background-repeat: no-repeat, repeat;
 	background-position: right .7em top 50%, 0 0;
 	background-size: 1.5em auto, 100%;
-  font-size: 0.9em;
+  font-size: 0.9rem;
 }
 select:focus {
 	color: var(--main-text-color);
@@ -139,12 +144,12 @@ select:focus {
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
   font-weight: 400;
-  font-size: 2.7em;
+  font-size: 2.7rem;
   letter-spacing: 1px;
 }
 .subtitle {
   font-weight: 100;
-  font-size: 2.5em;
+  font-size: 2.5rem;
   word-spacing: 5px;
   padding-bottom: 15px;
   color: var(--sec-text-color);;
