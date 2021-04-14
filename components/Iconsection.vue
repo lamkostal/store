@@ -89,24 +89,19 @@ export default {
     flex-direction: column;
     font-family: 'Kathycox';
     font-family: 'Bugaki';
-    flex-grow: 0;
+    flex: 1;
     margin: 1em;
-
-    
 }
 .iconsection_item span{
     letter-spacing: 2px;
     color:var(--main-color);
     margin: 0 0 1em;
-
 }
 .iconsection_item svg{
     flex-basis: 50px;
-    
 }
 .iconsection_item path{
     fill:var(--main-color)
-     
 }
 
 </style>

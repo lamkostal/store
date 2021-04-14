@@ -15,7 +15,7 @@
                 /></svg
             ></nuxt-link>
           </div>
-          <nav>
+          <nav class="desktop-nav">
             <ul class="cat-list">
               <li v-for="cat in categories" :key="cat.title">
                 <nuxt-link :to="'/'+cat.title" >{{ cat.title }}</nuxt-link>
@@ -42,6 +42,8 @@
             (<span class="snipcart-items-count">0</span>)
          <span></span>
           </div>
+          <NavToggle @toggle="isOpen=!isOpen"/>
+          <MobileNav :categories="categories" v-if="isOpen" @close="isOpen=!isOpen"/>
        </div>
         
      
@@ -49,11 +51,25 @@
 </template>
 
 <script>
+import NavToggle from '../components/NavToggle.vue'
+import MobileNav from '../components/MobileNav.vue'
+
+
 export default {
+  components:{
+    NavToggle,
+    MobileNav
+  },
       data() {
     return {
+      isOpen:false,
       categories: []
     }
+  },
+  methods:{
+     showMenu(){
+            
+        }
   },
  async fetch(){
      this.categories = await this.$nuxt.context.app.$storyapi
@@ -82,19 +98,19 @@ export default {
 
 <style>
 .nav-con{
-    max-width: 800px;
+    max-width: 1000px;
     margin:auto;
      display: flex;
      align-items: center;
      justify-content: space-around;
      flex-wrap: wrap;
+     padding: 0.5em;
 }
 .nav-con>*{
     flex:1
 }
 .home{
     position: relative;
-    
 }
  .navbar{
      position:sticky;
@@ -104,11 +120,15 @@ export default {
      border-bottom: 1px solid var(--main-color);
      padding: 10px 20px;
      max-width: 100%;
-    
  }
  nav{
     position: inherit;
  }
+ @media (max-width:700px){
+ .desktop-nav{
+   display: none;
+ }
+}
  .cat-list {
   display: flex;
   list-style: none;
@@ -116,10 +136,10 @@ export default {
   align-items: center;
   padding: 0;
 }
-
 .cat-list li {
   margin: 10px;
   padding: 0;
+  flex:1
 }
 .cat-list a {
   color: var(--sec-text-color);
@@ -133,25 +153,26 @@ export default {
 }
 .sales_link{
   opacity: 0;
-
   font-family: 'Kathycox';
   font-family: 'Bugaki';
-  /* letter-spacing: 1px; */
-}
+  }
 .sales_link a{
   color:var(--danger-color) ;
   font-size: 1rem;
-
 }
 .cart {
-  
     display: flex;
     align-items: center;
     border: none;
     position: relative;
     z-index: 10;
     justify-content: flex-end;
-
+}
+@media (max-width:700px){
+ .cart{
+    justify-content: flex-start;
+  
+ }
 }
 .cart button {
   border: none;
@@ -169,4 +190,5 @@ export default {
 .cart span{
   margin: 0 5px;
 }
+
 </style>

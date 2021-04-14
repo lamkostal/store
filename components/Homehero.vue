@@ -87,7 +87,7 @@
             height="35"
             href="/heroimgs/mask.jpeg"
           />
-          <text x='135' y='95' >Masks</text>
+          <text x='125' y='95' >Masks</text>
 
        </nuxt-link>
        <nuxt-link to="/tshirts">

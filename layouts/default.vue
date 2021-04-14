@@ -126,7 +126,6 @@ a {
   color: var(--main-color);
   text-decoration: none;
 }
-
 img {
   max-width: 100%;
 }
@@ -138,6 +137,7 @@ img {
   align-items: center;
   color: #f2f2f2;
   opacity: 1;
+  padding: 2em;
 }
 .close {
   width: 25px;

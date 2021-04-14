@@ -144,9 +144,10 @@ select:focus {
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
   font-weight: 400;
-  font-size: 2.7rem;
+  font-size: 1.8rem;
   letter-spacing: 1px;
 }
+
 .subtitle {
   font-weight: 100;
   font-size: 2.5rem;

@@ -63,10 +63,12 @@
 
     <div class="bottom-bar">
       <div></div>
-      <div class="logo">
-        <!-- <h1>Lamstore</h1> -->
-        <img src="../static/store_logo.svg" alt="lamstrore logotype" />
-      </div>
+      <nuxt-link to="/">
+        <div class="logo">
+          <!-- <h1>Lamstore</h1> -->
+          <img src="../static/store_logo.svg" alt="lamstrore logotype" />
+        </div>
+      </nuxt-link>
       <div class="search">
         <button >
           <svg
@@ -114,17 +116,28 @@ export default {
   height: 20px;
 }
 .logo * {
-  max-width: 200px;
+  width: 180px;
+
 }
 .bottom-bar {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+  gap:15px;
 }
 .bottom-bar > * {
   display: flex;
   flex: 1;
   justify-content: center;
+  
+}
+@media (max-width:700px){
+  .bottom-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
 }
 .search {
   display: flex;
