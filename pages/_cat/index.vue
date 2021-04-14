@@ -1,6 +1,6 @@
 <template>
   <main>
-  <div class='page-content'>
+  <div class='page-content container'>
       
         <!-- <div class="headers"> -->
           <!-- <h2 class="subtitle">{{$route.params.cat}}</h2> -->

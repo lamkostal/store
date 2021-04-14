@@ -22,9 +22,9 @@
     <Head />
     <Nav />
     <Hero>{{ pageName }}</Hero>
-    <div class="container">
+   
       <nuxt />
-    </div>
+    
     <div
       id="snipcart"
       data-currency="eur"

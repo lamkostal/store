@@ -70,9 +70,11 @@ export default {
 
 <style>
 .iconsection{
+    
     background: var(--accent-color);
     display: flex;
     flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     padding:4em 2em;
@@ -86,8 +88,8 @@ export default {
     align-items: center;
     flex-direction: column;
     font-family: 'Kathycox';
-  font-family: 'Bugaki';
-
+    font-family: 'Bugaki';
+    flex-grow: 0;
     margin: 1em;
 
     

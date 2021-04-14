@@ -79,11 +79,13 @@ export default {
 </script>
     
 <style>
+    .carousel{
+     text-align: center;
 
+    }
     .carousel-con{
      display: grid;
-     place-content: center;
-    
+     place-content: center;    
     }
     section h3{
         border-top: 1px dashed var(--light-grey);
@@ -94,6 +96,7 @@ export default {
         font-size: 2.5em;
         width:80vw;
         font-weight: lighter;
+
     }
     .slides-list{
         flex: 0;
@@ -102,6 +105,7 @@ export default {
         flex-wrap: wrap;
         /* overflow: hidden; */
         padding: 0;
+        list-style: none;
         margin: 0;
 
     }

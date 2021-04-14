@@ -1,6 +1,6 @@
 <template>
   <main>
-    <article class="product">
+    <article class="product container">
       <transition name="fade"><div @click="isOpen=!isOpen" class="zoom-image" v-if="isOpen"><img :src="mainSrc" alt=""></div></transition>
       <div class="images v-flex">
        <div class="main-img" @click="isOpen=!isOpen"> <img :src="repMainSrc" alt="" /></div>
@@ -204,7 +204,12 @@ export default {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 2rem;
+  padding: 5rem;
+}
+@media (max-width:700px){
+  .product{
+    padding:1em
+  }
 }
 .product > * {
   margin: 0.5rem;

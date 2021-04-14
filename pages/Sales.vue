@@ -1,6 +1,6 @@
 <template>
   <main>
-      <div class="page-content">
+      <div class="page-content container">
         <div class="headers">
           <h2 v-gsap.from="{y:-100,ease:'bounce.out',duration:1}" class="sales-title">NOW ON SALES!!</h2>
         </div>

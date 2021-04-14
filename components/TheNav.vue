@@ -87,6 +87,7 @@ export default {
      display: flex;
      align-items: center;
      justify-content: space-around;
+     flex-wrap: wrap;
 }
 .nav-con>*{
     flex:1
@@ -102,6 +103,7 @@ export default {
      z-index: 1;
      border-bottom: 1px solid var(--main-color);
      padding: 10px 20px;
+     max-width: 100%;
     
  }
  nav{
