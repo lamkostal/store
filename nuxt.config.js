@@ -85,5 +85,22 @@ module.exports = {
     extend(config, ctx) {
       
     }
+  },
+  generate:{
+    routes: function(){
+      return axios.get('https://api.storyblok.com/v1/cdn/stories?verion=published&token=YWHEVryFmuLD6ROEZs0rzgtt&starts_with=products&cv=' + Math.floor(Date.now()/ 1e3))
+      .then( res => {
+        const products = res.data.stories.map( p => p.full_slug);
+        return [
+          "/",
+          "/tshirts",
+          "/cups",
+          "/baseball",
+          "/masks",
+          "/hoodies",
+          ...products
+        ]
+      })
+    }
   }
 }

@@ -43,7 +43,7 @@
          <span></span>
           </div>
           <NavToggle @toggle="isOpen=!isOpen"/>
-          <MobileNav :categories="categories" v-if="isOpen" @close="isOpen=!isOpen"/>
+        <transition name="fade">  <MobileNav :categories="categories" v-if="isOpen" @close="isOpen=!isOpen"/></transition>
        </div>
         
      

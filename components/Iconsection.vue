@@ -80,6 +80,13 @@ export default {
     padding:4em 2em;
     margin-top: 2em;
 }
+@media (max-width:700px){
+    .iconsection{
+    padding: 4em 0.5em;
+
+}
+   
+}
 .iconsection_item{
     color:var(--sec-text-color);
     font-size: 1.2rem;
@@ -97,6 +104,11 @@ export default {
     color:var(--main-color);
     margin: 0 0 1em;
 }
+@media (max-width:700px){
+    .iconsection_item span{
+   font-size: 0.9rem;
+
+}}
 .iconsection_item svg{
     flex-basis: 50px;
 }

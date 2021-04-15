@@ -30,6 +30,24 @@ export default {
     Grid,
     Brands
   },
+  mounted(){
+    let gsap = this.$gsap
+    let subs = gsap.utils.toArray(".subtitle")
+    
+    subs.forEach(el => {
+      gsap.from(el,{
+        color:'var(--main-color)',
+        letterSpacing:'25px',
+        duration:1.5,
+        ease:'power3.out',
+        x:100,opacity:0,
+        scrollTrigger:{
+          trigger:el,
+          toggleActions:'restart none none none'
+        }
+      })
+    })
+  },
   data(){
     return{
      
@@ -88,7 +106,6 @@ section{
 
 .headers{
   margin:20px 0 50px;
-
 }
 
 .title {
@@ -96,18 +113,20 @@ section{
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
   font-weight: 400;
-  font-size: 2.7em;
+  font-size: 1.8rem;
   letter-spacing: 1px;
 }
 .subtitle {
-  font-weight: 100;
-  font-size: 2.5rem;
+ 
+  width:auto;
+    font-weight: 100;
+  font-size: 2.8rem;
   word-spacing: 5px;
   padding: 1em;
   color: var(--sec-text-color);
-  border-top: 1px solid var(--light-grey) ;
-
+  /* border-top: 1px solid var(--light-grey) ; */
 }
+
 
 .links {
   padding-top: 15px;

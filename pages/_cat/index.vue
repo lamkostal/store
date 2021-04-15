@@ -139,22 +139,6 @@ select:focus {
 	/* outline: none; */
 }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 400;
-  font-size: 1.8rem;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 100;
-  font-size: 2.5rem;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-  color: var(--sec-text-color);;
-}
 
 .links {
   padding-top: 15px;

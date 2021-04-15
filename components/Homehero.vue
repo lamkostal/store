@@ -117,7 +117,7 @@ export default {
     methods:{
         loadGsap(){
                let gsap = this.$gsap
-               let tl = gsap.timeline({delay:0.2,})
+               let tl = gsap.timeline({delay:0,})
 
         tl
         .to('svg',{opacity:1,duration:0.1})
@@ -182,10 +182,10 @@ export default {
 </script>
 
 <style>
-@font-face {
+/* @font-face {
   font-family: 'KathyCox';
   src: url('/KathyCox.otf');
-}
+} */
 @font-face {
   font-family: 'Bugaki';
   src: url('/Bugaki-Regular.otf');
@@ -196,7 +196,7 @@ export default {
     overflow: vidible;
 }
 text{
-  fill:var(--main-text-color);
+  fill:var(--accent-color);
   font-size:0.35em;
   font-family: 'KathyCox';
   font-family: 'Bugaki';

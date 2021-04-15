@@ -1,10 +1,9 @@
 <template>
-
-   <article>
-    <div class="card-container" >
-      <div class="card__image" >
-           <div v-if="isFeatured" class="ribon featured">featured</div>
-           <!-- <div v-if="sales" class="ribon sales">sales</div> -->
+  <article>
+    <div class="card-container">
+      <div class="card__image">
+        <div v-if="isFeatured" class="ribon featured">featured</div>
+        <!-- <div v-if="sales" class="ribon sales">sales</div> -->
 
         <nuxt-link :to="routeLink"
           ><img :src="cardThumb" :alt="imgalt"
@@ -13,12 +12,16 @@
       </div>
       <nuxt-link :to="routeLink">
         <div class="card__title">
-          <h3>{{ title }}<span>{{defaultColor}}</span></h3>
+          <h3>
+            {{ title }}<span>{{ defaultColor }}</span>
+          </h3>
         </div>
       </nuxt-link>
       <div class="card__details">
         <p class="prod-descr">{{ desc }}</p>
-        <nuxt-link :to="routeLink"><div class="viewmore">view more</div></nuxt-link>
+        <nuxt-link :to="routeLink"
+          ><div class="viewmore">view more</div></nuxt-link
+        >
         <div>
           <span class="prod-price" :class="{ strikeline: sales }">{{
             addcurrency
@@ -31,7 +34,7 @@
             :data-item-id="title + defaultColor"
             :data-item-price="finalPrice"
             :data-item-url="url"
-            :data-item-name="title+ defaultColor"
+            :data-item-name="title + defaultColor"
             :data-item-image="imgsrc"
             :data-item-description="desc"
             :data-item-custom1-name="hasSize ? 'Size' : false"
@@ -54,14 +57,11 @@
       </div>
     </div>
   </article>
-
- 
 </template>
 
 <script>
 export default {
   props: [
-    
     "title",
     "desc",
     "price",
@@ -75,7 +75,7 @@ export default {
     "sales",
     "discount",
     "featured",
-    'colors'
+    "colors",
   ],
   data() {
     return {
@@ -84,9 +84,11 @@ export default {
     };
   },
   computed: {
-    defaultColor(){
-      return this.colors.length?  '  '+'(' +this.colors[0].chroma_name +')' :''
-      },
+    defaultColor() {
+      return this.colors.length
+        ? "  " + "(" + this.colors[0].chroma_name + ")"
+        : "";
+    },
     cardThumb() {
       return this.imgsrc.replace(
         "https://a.storyblok.com",
@@ -130,13 +132,15 @@ export default {
     // console.log("slug:" + this.slug);
     // console.log("size:" + this.size);
     // console.log("name:" + this.title + " sizeoptions:" + this.hasSizeOptions);
-    var gsap = this.$gsap
-    gsap.fromTo('.card-container',{
-      y:100,
-      opacity:0
-    },{y:0,
-    opacity:1,
-     stagger:0.1 })
+    var gsap = this.$gsap;
+    gsap.fromTo(
+      ".card-container",
+      {
+        y: 100,
+        opacity: 0,
+      },
+      { y: 0, opacity: 1, stagger: 0.1 }
+    );
   },
 };
 </script>
@@ -153,13 +157,29 @@ export default {
   background: rgb(255, 255, 255);
   position: relative;
 }
+@media (max-width: 700px) {
+  .card-container {
+    padding-top: 20px  ;
+    width: 320px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 07px 04px 15px 0px rgba(189, 189, 189, 0.7);
+    margin: auto;
+    overflow: hidden;
+    background: rgb(255, 255, 255);
+    position: relative;
+  }
+  .button-pop {
+    display: none;
+  }
+}
 .card__title {
   margin: 10px 0 0 0;
   font-size: 1.1rem;
   color: var(--main-text-color);
 }
-.card__title span{
-  color:var(--sec-text-color);
+.card__title span {
+  color: var(--sec-text-color);
   font-size: 0.7rem;
 }
 .card__title:hover {
@@ -183,7 +203,6 @@ export default {
   height: 250px;
   background: rgb(255, 255, 255);
   overflow: hidden;
-  
 }
 .card__image a {
   width: 100%;
@@ -276,7 +295,7 @@ export default {
   /* margin: 0em 0 1em; */
   padding: 0 0.5em 1em;
 }
-.viewmore{
+.viewmore {
   width: 40%;
   padding: 0.6em 0.4em;
   font-weight: bold;
@@ -287,9 +306,9 @@ export default {
   margin-bottom: 1em;
   transition: all 0.2s ease;
 }
-.viewmore:hover{
+.viewmore:hover {
   background: var(--main-color);
-  color:#fff;
+  color: #fff;
 }
 .prod-disprice {
   position: absolute;

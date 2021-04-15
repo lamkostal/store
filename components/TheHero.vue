@@ -1,8 +1,10 @@
 <template>
-  <div class="hero-container">
-    <h1 class="title" v-gsap.from="{x:400,opacity:0.3,duration:0.4}">
-     <slot> lamstore </slot><br> </h1>
-  </div>
+  <header>
+    <div class="hero-container">
+      <h1 class="title" v-gsap.from="{x:400,opacity:0.3,duration:0.4}">
+       <slot> lamstore </slot><br> </h1>
+    </div>
+  </header>
 </template>
 
 <script>
