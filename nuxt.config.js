@@ -1,4 +1,6 @@
 const pkg = require('./package')
+const axios= require("axios");
+
 
 module.exports = {
   buildModules: ['nuxt-gsap-module'],
@@ -88,7 +90,7 @@ module.exports = {
   },
   generate:{
     routes: function(){
-      return $axios.get('https://api.storyblok.com/v1/cdn/stories?verion=published&token=YWHEVryFmuLD6ROEZs0rzgtt&starts_with=products&cv=' + Math.floor(Date.now()/ 1e3))
+      return axios.get('https://api.storyblok.com/v1/cdn/stories?verion=published&token=YWHEVryFmuLD6ROEZs0rzgtt&starts_with=products&cv=' + Math.floor(Date.now()/ 1e3))
       .then( res => {
         const products = res.data.stories.map( p => p.full_slug);
         return [
