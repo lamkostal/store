@@ -6,7 +6,7 @@
         <!-- <div v-if="sales" class="ribon sales">sales</div> -->
 
         <nuxt-link :to="routeLink"
-          ><img :src="cardThumb" :alt="imgalt"
+          ><img :src="cardThumb" :alt="imgalt" :title="title"
         /></nuxt-link>
         <div class="discount-sticker" v-if="sales">-{{ discount }}%</div>
       </div>
@@ -22,7 +22,7 @@
         <nuxt-link :to="routeLink"
           ><div class="viewmore">view more</div></nuxt-link
         >
-        <div>
+        <div class="card-footer">
           <span class="prod-price" :class="{ strikeline: sales }">{{
             addcurrency
           }}</span>
@@ -192,10 +192,12 @@ export default {
   bottom: 10px;
   right: 10px;
   border-radius: 50%;
-  padding: 18px 10px;
+  padding: 22px 12px;
   background: var(--danger-color);
   color: #fff;
-  font-weight: bold;
+  font-weight: normal;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
 }
 .card__image {
   z-index: 0;
@@ -228,6 +230,11 @@ export default {
   transition-delay: 0.1s;
   border-radius: 0px 0 5px 0;
   z-index: 0;
+}
+@media (max-width:700px){
+ .cart-icon svg{
+  height: 25px;
+}
 }
 .button-pop {
   position: absolute;
@@ -306,13 +313,37 @@ export default {
   margin-bottom: 1em;
   transition: all 0.2s ease;
 }
+@media (max-width:700px){
+  .viewmore {
+  width: 50%;
+  padding: 0.6em 0.4em;
+  font-weight: bold;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  border: 1px solid var(--main-color);
+  margin: auto;
+  margin-bottom: 1em;
+  transition: all 0.2s ease;
+   background: var(--main-color);
+  color: #fff;
+}
+}
 .viewmore:hover {
   background: var(--main-color);
   color: #fff;
 }
+.card-footer{
+ display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.prod-price{
+  padding-top: 7px;
+  font-size: 1.1em;
+}
 .prod-disprice {
   position: absolute;
-  top: -5px;
+  top: -8px;
   left: 17px;
   width: 70px;
   font-weight: bold;

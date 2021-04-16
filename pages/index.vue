@@ -117,13 +117,13 @@ section{
   letter-spacing: 1px;
 }
 .subtitle {
- 
+ display: inline-block;
   width:auto;
-    font-weight: 100;
+  font-weight: 100;
   font-size: 2.8rem;
   word-spacing: 5px;
   padding: 1em;
-  color: var(--sec-text-color);
+  color: var(--accent-color);
   /* border-top: 1px solid var(--light-grey) ; */
 }
 

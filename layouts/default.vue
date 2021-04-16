@@ -96,7 +96,7 @@ body {
   --light-grey: rgb(196, 196, 196);
   --danger-color: rgb(243, 55, 8);
   --info-color: rgb(21, 146, 4);
-  --main-color: rgb(17, 155, 109);
+  --main-color: hsl(160, 90%, 28%);
   --sec-color: rgb(144, 231, 144);
   --accent-color: rgb(55, 43, 85);
   --main-bgcolor: #f2f2f2;

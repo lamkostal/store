@@ -15,6 +15,11 @@
 
           <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M19 2H5v2H3v14h7v-8H5V4h14v6h-5v8h3v2h-6v2h8v-4h2V4h-2V2zm-3 10h3v4h-3v-4zm-8 0v4H5v-4h3z" fill="currentColor"/> </svg>
       </div>
+        <div class="iconsection_item">
+          <span>Secure Payments</span>
+
+          <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M15 2H9v2H7v4H4v14h16V8h-3V4h-2V2zm0 2v4H9V4h6zm-6 6h9v10H6V10h3zm4 3h-2v4h2v-4z" fill="currentColor"/> </svg>
+      </div>
   </section>
   
 </template>
@@ -96,13 +101,15 @@ export default {
     flex-direction: column;
     font-family: 'Kathycox';
     font-family: 'Bugaki';
-    flex: 1;
+    flex-grow: 1 ;
     margin: 1em;
 }
 .iconsection_item span{
     letter-spacing: 2px;
-    color:var(--main-color);
+    color:var(--inv-text-color);
     margin: 0 0 1em;
+    flex:1 0;
+
 }
 @media (max-width:700px){
     .iconsection_item span{

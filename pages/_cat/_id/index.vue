@@ -1,9 +1,9 @@
 <template>
   <main>
     <article class="product container">
-      <transition name="fade"><div @click="isOpen=!isOpen" class="zoom-image" v-if="isOpen"><img :src="mainSrc" alt=""></div></transition>
+      <transition name="fade"><div @click="isOpen=!isOpen" class="zoom-image" v-if="isOpen"><img :src="mainSrc" :alt="singleProduct.imgs[0].alt"  :title="singleProduct.title"></div></transition>
       <div class="images v-flex">
-       <div class="main-img" @click="isOpen=!isOpen"> <img :src="repMainSrc" alt="" /></div>
+       <div class="main-img" @click="isOpen=!isOpen"> <img :src="repMainSrc" :alt="singleProduct.imgs[0].alt" :title="singleProduct.title"/></div>
         <!-- <div class="thumbs" v-if="singleProduct.imgs.length>1">
           <img v-for="(img, index) in singleProduct.imgs" :src="img.filename" :alt="img.alt" :key="index" />
         </div> -->
@@ -26,9 +26,9 @@
              <div class="v-flex product-options__item" v-if="hasColor">
               <span v-if="hasSize">choose from available colors: </span >
               <div>
-                <div @click="chooseImage(index)" class="color-box" v-for="(item,index) in singleProduct.colors" :style="{background:item.chroma.color}" :key="index">
+                <button @click="chooseImage(index)" role="button"  class="color-box" v-for="(item,index) in singleProduct.colors" :style="{background:item.chroma.color}" :key="index">
                   <span class="info-span">{{item.chroma_name}}</span>
-                </div>
+                </button>
               </div>
             </div>
           </div>
@@ -199,7 +199,7 @@ export default {
 
 <style>
 .product {
-  max-width: 90%;
+  max-width: 1000px;
   margin: auto;
   display: flex;
   justify-content: center;
@@ -245,6 +245,7 @@ export default {
 }
 .zoom-image img{
   border-radius: 5%;
+  max-height: 85vh;
 }
 .product .images {
   cursor: zoom-in;
@@ -265,10 +266,7 @@ export default {
  
   padding: 0 1em ;
 }
-.product-details h1{
-  /* text-align: left; */
-  
-}
+
 .product-details p {
   margin: 2em 0;
   text-align: left;
@@ -279,6 +277,7 @@ export default {
 }
 
 .product .btn {
+  
   width: 100%;
   border: none;
   padding: 1rem;
@@ -323,11 +322,12 @@ export default {
   letter-spacing: 5px;
 }
 .color-box{
-  transition: all 0.2s;
-  width:35px;
-  height:35px;
+  transition: all 0.1s;
+  width:45px;
+  height:45px;
   display: inline-block;
-  margin: 1.2em 0.5em 0 0em ;
+  margin: 1.4em 0.7em 0 0em ;
+  border: none;
   border-radius: 5px;
   position: relative;
   box-shadow:  1px 2px 5px 0 rgb(172, 172, 172);
@@ -335,10 +335,14 @@ export default {
 }
 .color-box:hover{
   box-shadow:  0px 5px 7px 0 rgb(172, 172, 172);
+  
+}
+.color-box:focus{
+  outline:1px solid var(--accent-color)
 }
 .color-box span{
   position: absolute;
-  top: -22px;
+  top: -19px;
   left:0;
 }
 .h-flex{
