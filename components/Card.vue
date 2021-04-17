@@ -79,8 +79,7 @@ export default {
   ],
   data() {
     return {
-      // slug:this.$route.name,
-      url: "https://lamstore.netlify.app" + this.$route.path + "/" + this.title,
+      url: "https://lamstore.netlify.app" + this.full_slug.substring(7)
     };
   },
   computed: {

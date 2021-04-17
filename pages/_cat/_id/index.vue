@@ -90,7 +90,7 @@ export default {
     },
   data(){
     return{
-       url: "https://lamstore.netlify.app" + this.$route.path,
+      url: "https://lamstore.netlify.app" + this.$route.path,
       inStock:true,
       src:'',
       isOpen:false,
