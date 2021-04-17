@@ -94,7 +94,7 @@ html {
 }
 body {
   --light-grey: rgb(196, 196, 196);
-  --danger-color: rgb(243, 55, 8);
+  --danger-color: hsl(12, 100%, 52%);
   --info-color: rgb(21, 146, 4);
   --main-color: hsl(160, 90%, 28%);
   --sec-color: rgb(144, 231, 144);

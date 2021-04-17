@@ -2,14 +2,14 @@
   <section class="brands">
   
      
-          <h2 class="subtitle">Brands</h2>
+          <div class="headers"><h2 class="subtitle">Brands</h2></div>
     
      <div class="brand_logos">
-          <picture><img src="/brand_imgs/rocky.jpg" alt=""></picture>
-          <picture><img src="/brand_imgs/nb.jpg" alt=""></picture>
-          <picture><img src="/brand_imgs/quicksilver.jpg" alt=""></picture>
-          <picture><img src="/brand_imgs/vans.jpg" alt=""></picture>
-          <picture><img src="/brand_imgs/addidas classic.jpg" alt=""></picture>
+          <picture><img src="/brand_imgs/rocky.png" alt="rocky logo"></picture>
+          <picture><img src="/brand_imgs/nb.png" alt="new balance logo"></picture>
+          <picture><img src="/brand_imgs/quicksilver.png" alt="quicksilver logo"></picture>
+          <picture><img src="/brand_imgs/vans.png" alt="vans logo"></picture>
+          <picture><img src="/brand_imgs/addidas classic.png" alt="adidas logo"></picture>
      </div>
   </section>
 </template>
@@ -43,6 +43,9 @@ export default {
         flex-wrap: wrap;
         justify-content: space-around;
         align-items: center;
+    }
+      .brand_logos picture{
+        max-width: 120px;
     }
      
 </style>

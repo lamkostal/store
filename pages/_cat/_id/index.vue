@@ -45,7 +45,7 @@
             class="btn buy-button snipcart-add-item"
             :data-item-id="singleProduct.title"
             :data-item-price="finalPrice"
-            :data-item-url="singleProduct.url"
+            :data-item-url="url"
             :data-item-name="singleProduct.title +' '+ chromaName"
             :data-item-image="mainSrc"
             :data-item-description="singleProduct.desc"
@@ -90,6 +90,7 @@ export default {
     },
   data(){
     return{
+       url: "https://lamstore.netlify.app" + this.$route.path,
       inStock:true,
       src:'',
       isOpen:false,

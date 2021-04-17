@@ -105,7 +105,8 @@ section{
 }
 
 .headers{
-  margin:20px 0 50px;
+  /* margin:20px 0 50px; */
+  overflow:hidden;
 }
 
 .title {

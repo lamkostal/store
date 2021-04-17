@@ -80,7 +80,7 @@ export default {
   data() {
     return {
       // slug:this.$route.name,
-      url: "http://localhost:3000" + this.$route.path,
+      url: "https://lamstore.netlify.app" + this.$route.path + "/" + this.title,
     };
   },
   computed: {
@@ -313,12 +313,12 @@ export default {
   margin-bottom: 1em;
   transition: all 0.2s ease;
 }
-@media (max-width:700px){
+@media (max-width:1024px){
   .viewmore {
   width: 50%;
   padding: 0.6em 0.4em;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   letter-spacing: 1px;
   border: 1px solid var(--main-color);
   margin: auto;
