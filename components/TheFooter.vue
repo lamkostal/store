@@ -55,7 +55,6 @@ export default {};
   font-size: 0.75rem;
   padding: 4em 0 1em;
 }
-
 .lam{
   float: right;
   padding-right: 0em;

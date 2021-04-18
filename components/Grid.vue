@@ -49,10 +49,9 @@ export default {
         padding: 10px 50px;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-       grid-row-gap: 50px;
-       grid-column-gap:0px ;
-       flex-grow: 1;
-      
+        grid-row-gap: 50px;
+        grid-column-gap:0px ;
+        flex-grow: 1;
     }
     @media (max-width:700px) {
          .grid{
@@ -62,7 +61,6 @@ export default {
        grid-row-gap: 20px;
        grid-column-gap:0px ;
        flex-grow: 1;
-      
     }
     }
 </style>

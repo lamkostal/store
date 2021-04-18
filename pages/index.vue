@@ -116,6 +116,7 @@ section{
   font-weight: 400;
   font-size: 1.8rem;
   letter-spacing: 1px;
+  opacity: 0;
 }
 .subtitle {
  display: inline-block;

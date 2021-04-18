@@ -10,7 +10,7 @@
       </div>
       <div class="product-details">
         <div>
-           <h1>{{ singleProduct.title }} {{chromaName}}</h1>
+           <h2>{{ singleProduct.title }} {{chromaName}}</h2>
           <span class="info-span">SKU: {{singleProduct.sku}}</span>
           
           <p>{{ singleProduct.desc }}</p>
@@ -205,7 +205,7 @@ export default {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 5rem;
+  padding:0 5rem 5rem;
 }
 @media (max-width:700px){
   .product{

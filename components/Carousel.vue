@@ -1,7 +1,7 @@
 <template>
 
   <section class="carousel" v-if="produits.length">
-    <h3>Similar Products</h3>
+    <h3 class="subtitle">Similar Products</h3>
       <div class="carousel-con">
           <ul class="slides-list"   >
               <li v-for="produit in produits" :key="produit.title">
@@ -87,17 +87,7 @@ export default {
      display: grid;
      place-content: center;    
     }
-    section h3{
-        border-top: 1px dashed var(--light-grey);
-        margin: auto;
-        margin-top: 1.2em;
-        color:var(--sec-text-color);
-        padding: 1.2em 0 0.5em;
-        font-size: 2.5em;
-        width:80vw;
-        font-weight: lighter;
-
-    }
+   
     .slides-list{
         flex: 0;
         width: auto;
@@ -107,16 +97,18 @@ export default {
         padding: 0;
         list-style: none;
         margin: 0;
+        justify-content: center;
 
     }
     .slides-list li {
-        flex:1;
+        flex:0 0 auto;
         /* flex-basis:45%;  */
         border:var(--light-grey) 1px solid;
         height:300px;
         margin: 0.4em;
         padding: 0.8em;
         border-radius: 5px;
+        background: var(--bg-color);
     }
     .slides-list li *{
         margin: 0.4em 0;

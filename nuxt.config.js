@@ -23,7 +23,7 @@ module.exports = {
   head: {
     title: pkg.name,
     htmlAttrs: {
-      lang: 'gr'
+      lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },

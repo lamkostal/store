@@ -1,7 +1,7 @@
 <template>
    <div class="navbar">
        <div class="nav-con">
-            <div class="home">
+            <div class="home nav-icon">
             <nuxt-link to="/"
               ><svg
                 fill="none"
@@ -24,7 +24,7 @@
             </ul>
           </nav>
          
-          <div class="cart">
+          <div class="cart nav-icon">
             <button class="snipcart-checkout">
               <svg
                 fill="none"
@@ -109,13 +109,29 @@ export default {
 .nav-con>*{
     flex:1
 }
+.nav-icon{
+  stroke:transparent ;
+  stroke-width: 1px;
+  transition: all 0.5s;
+  stroke-dashoffset: 15px;
+  stroke-dasharray: 15px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+}
+.nav-icon:hover{
+  stroke:var(--sec-color);
+  stroke-dashoffset:-15px;
+  stroke-dasharray: 0px;
+
+}
 .home{
     position: relative;
 }
  .navbar{
      position:sticky;
      top:0;
-     background:var(--main-bgcolor);
+     background:var(--bg-color);
      z-index: 1;
      border-bottom: 1px solid var(--main-color);
      padding: 10px 20px;

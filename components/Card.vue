@@ -79,7 +79,7 @@ export default {
   ],
   data() {
     return {
-      url: "https://lamstore.netlify.app" + this.full_slug.substring(7)
+      url: "https://lamstore.netlify.app" + this.full_slug.substring(8)
     };
   },
   computed: {

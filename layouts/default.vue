@@ -93,17 +93,18 @@ html {
   /* position: relative; */
 }
 body {
-  --light-grey: rgb(196, 196, 196);
+  --light-grey: #c4c4c4;
   --danger-color: hsl(12, 100%, 52%);
   --info-color: rgb(21, 146, 4);
   --main-color: hsl(160, 90%, 28%);
   --sec-color: rgb(144, 231, 144);
   --accent-color: rgb(55, 43, 85);
-  --main-bgcolor: #f2f2f2;
+  --bg-color: #f2f2f2;
   --main-text-color: rgb(44, 44, 44);
   --inv-text-color: rgb(211, 211, 211);
   --sec-text-color: rgb(134, 134, 134);
-  background: var(--main-bgcolor);
+  background: var(--bg-color);
+  background-image: url('@/static/bg-pattern.svg');
   color: var(--main-text-color);
   overflow: visible;
 }
@@ -194,7 +195,7 @@ img {
   background-position: 100px;
 }
 .snipcart-cart-button--secondary {
-  color: var(--main-bgcolor);
+  color: var(--bg-color);
 }
 .snipcart-cart-button--secondary .snipcart__icon path {
   fill: var(--main-color) !important;
@@ -208,7 +209,7 @@ img {
 .snipcart-cart-header,
 .snipcart-cart__secondary-header,
 .snipcart-modal {
-  background: var(--main-bgcolor);
+  background: var(--bg-color);
 }
 .snipcart__icon--blue-light path,
 .snipcart__icon--blue-dark path {

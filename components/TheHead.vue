@@ -101,6 +101,8 @@ export default {
   position: relative;
   text-align: center;
   padding: 10px 20px;
+  background: var(--bg-color);
+
 }
 .top-bar {
   height: 20px;
