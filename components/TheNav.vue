@@ -109,20 +109,20 @@ export default {
 .nav-con>*{
     flex:1
 }
-.nav-icon{
+.nav-icon path{
   stroke:transparent ;
   stroke-width: 1px;
   transition: all 0.5s;
-  stroke-dashoffset: 15px;
-  stroke-dasharray: 15px;
+  stroke-dashoffset: 200;
+  stroke-dasharray: 4,2;
   stroke-linecap: round;
   stroke-linejoin: round;
 
 }
-.nav-icon:hover{
-  stroke:var(--sec-color);
-  stroke-dashoffset:-15px;
-  stroke-dasharray: 0px;
+.nav-icon:hover path{
+  stroke:var(--main-color);
+  stroke-dashoffset:0;
+  fill:transparent;
 
 }
 .home{
