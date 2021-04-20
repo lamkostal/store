@@ -22,6 +22,7 @@
     <Head />
     <Nav />
     <Hero>{{ pageName }}</Hero>
+    <Pagination/>
    
       <nuxt />
     
@@ -37,6 +38,8 @@
 </template>
 <script>
 import Head from "../components/TheHead.vue";
+import Pagination from "../components/Pagination.vue";
+
 import Hero from "../components/TheHero.vue";
 import Nav from "../components/TheNav.vue";
 import Footer from "../components/TheFooter.vue";
@@ -47,6 +50,7 @@ export default {
     Nav,
     Hero,
     Footer,
+    Pagination
   },
   data() {
     return {
@@ -107,6 +111,14 @@ body {
   background-image: url('@/static/bg-pattern.svg');
   color: var(--main-text-color);
   overflow: visible;
+}
+.container {
+  
+  text-align: center;
+  max-width: 1360px;
+  margin: auto ;
+  padding: 2em 0 0;
+
 }
 
 button {

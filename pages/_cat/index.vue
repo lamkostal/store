@@ -2,9 +2,6 @@
   <main>
   <div class='page-content container'>
       
-        <!-- <div class="headers"> -->
-          <!-- <h2 class="subtitle">{{$route.params.cat}}</h2> -->
-        <!-- </div> -->
         <div class="sorting-field">
             <label for="sort-products">price:</label>
             <select name="ascending" id="sort-products" v-model="sortSetter">
@@ -98,13 +95,10 @@ main{
   flex-grow: 1;
 }
 .page-content{
-  padding:0 0 5em;
+  padding:3em 0 5em;
 }
 
-.headers{
-  margin:20px 0 50px;
 
-}
 .sorting-field{
   display: flex;
     align-items: center;

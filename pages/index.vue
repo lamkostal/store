@@ -6,7 +6,7 @@
           <div class="headers">
             <h2 class="subtitle">featured products</h2>
           </div>
-          <Grid :products="products" index='true'/>
+          <Grid :products="products"  />
         <Brands />
        </div>
     <Iconsection />  
@@ -31,6 +31,7 @@ export default {
     Brands
   },
   mounted(){
+   
     let gsap = this.$gsap
     let subs = gsap.utils.toArray(".subtitle")
     
@@ -90,23 +91,16 @@ export default {
 main{
   max-width: 100%;
   flex-grow: 1;
+  
 }
 section{
   padding:0 0em 3em;
 }
-.container {
-  /* display: flex;
-  justify-content: center;
-  align-items: flex-start; */
-  text-align: center;
-  max-width: 1360px;
-  margin: 80px auto 0px;
 
-}
 
 .headers{
-  /* margin:20px 0 50px; */
-  overflow:hidden;
+ padding: 3em 0 .5em;
+  overflow:visible;
 }
 
 .title {

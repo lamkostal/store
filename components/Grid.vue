@@ -46,7 +46,7 @@ export default {
         list-style: none;
     }
     .grid{
-        padding: 10px 50px;
+        padding: 40px ;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
         grid-row-gap: 50px;
