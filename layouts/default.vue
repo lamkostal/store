@@ -117,7 +117,7 @@ body {
   text-align: center;
   max-width: 1360px;
   margin: auto ;
-  padding: 2em 0 0;
+  padding: 0.5em 0 0;
 
 }
 

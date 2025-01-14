@@ -118,7 +118,7 @@ section{
   font-weight: 100;
   font-size: 2.8rem;
   word-spacing: 5px;
-  padding: 1em;
+  padding: 0.5em;
   color: var(--accent-color);
   /* border-top: 1px solid var(--light-grey) ; */
 }
