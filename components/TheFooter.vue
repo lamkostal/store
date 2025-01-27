@@ -38,7 +38,7 @@
     </footer>
     <div class="footer_foot">
     <span>  copyright © all rights reserved {{ new Date(new Date()).getFullYear() }}</span>
-    <span class="lam">created by lamkos</span>
+    <span class="lam">created by <a href="https://kleo-dimi.gr/">KD</a></span>
     </div>
   </section>
 </template>
